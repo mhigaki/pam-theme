@@ -34,7 +34,8 @@
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>                   
       </div>
-    <?php endif; ?> <a class="carousel-control-prev" href="#bannerCarousole" role="button" data-slide="prev"> <span class="slider-mover-left" aria-hidden="true"> <i class="fa fa-angle-left"></i> </span> </a><a class="carousel-control-next" href="#bannerCarousole" role="button" data-slide="next"> <span class="slider-mover-right" aria-hidden="true"> <i class="fa fa-angle-right"></i> </span> </a> 
+    <?php endif; ?> <a class="carousel-control-prev" href="#bannerCarousole" role="button" data-slide="prev"> <span class="slider-mover-left" aria-hidden="true"> <i class="fa fa-angle-left"></i> </span> </a>
+    <a class="carousel-control-next" href="#bannerCarousole" role="button" data-slide="next"> <span class="slider-mover-right" aria-hidden="true"> <i class="fa fa-angle-right"></i> </span> </a> 
   </div>   
   <!-- Search Section start -->   
   <div class="search-section search-area-3 d-none d-xl-block d-lg-block" id="search-area-3"> 

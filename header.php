@@ -28,7 +28,9 @@
                             <div class="col-lg-6 col-md-4 col-sm-5">
                                 <ul class="pull-right top-social-media">
                                     <li>
-                                        <a class="facebook" rel="nofollow noreferrer noopener" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <?php if ( get_theme_mod( 'pam_sc_header_facebook' ) ) : ?>
+                                            <a class="facebook" rel="nofollow noreferrer noopener" href="<?php echo get_theme_mod( 'pam_sc_header_facebook', '#' ); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <?php endif; ?>
                                     </li>
                                     <li>
                                         <a href="<?php echo get_theme_mod( 'pam_sc_header_twitter', '#' ); ?>" class="twitter" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-twitter"></i></a>
