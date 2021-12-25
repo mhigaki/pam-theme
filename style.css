@@ -1,0 +1,92 @@
+/*
+Theme Name: PAM
+Theme URI: http://pamconsultoria.com.br
+Author: HIGATECH Team
+Author URI: http://higatech.xyz/
+Description: Tema desenvolvida e convertido para PAM Consultoria.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pam
+Requires PHP: 7.2.19
+Tested up to: 5.0
+*/
+
+.wp-caption {
+}
+
+.wp-caption-text {
+}
+
+.sticky {
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;     /* Above WP toolbar. */
+}
+
+.gallery-caption {
+}
+
+.bypostauthor {
+}
+
+.alignleft {
+}
+
+.aligncenter {
+}
+
+.alignright {
+}.button-theme {
+    background: #f0151f;
+}.form-content-box .input-text {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 13px;
+    border: 1px solid #e8e7e7;
+    outline: none;
+    color: #717171;
+    border-radius: 3px;
+    height: 45px;
+}.form-content-box .form-group {
+    margin-bottom: 25px;
+}.overview-bgi:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}.form-content-box {
+    max-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px;
+    color: #7c7c7c;
+    margin: 50px auto;
+    text-align: center;
+}
