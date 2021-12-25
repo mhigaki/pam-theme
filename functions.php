@@ -113,7 +113,8 @@ function pam_init() {
       ),
     'description' => __( 'Nossos Corretores', 'pam' ),
     'public' => true,
-    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'post-formats', 'page-attributes' ),
+    'hierarchical' => true,
+    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
     'show_in_rest' => true,
     'show_in_menu' => true,
     'menu_icon' => 'dashicons-id',
@@ -166,11 +167,13 @@ function pam_init() {
         'name' => __( 'Parceiros', 'pam' ),
         'singular_name' => __( 'O parceiro', 'pam' )
       ),
+    'description' => __( 'Cadastre o logo do parceiro', 'pam' ),
     'public' => true,
-    'supports' => array( 'title', 'editor', 'thumbnail', 'author' ),
+    'supports' => array( 'title', 'editor', 'thumbnail' ),
     'show_in_rest' => true,
     'show_in_menu' => true,
-    'menu_icon' => 'dashicons-nametag'
+    'menu_icon' => 'dashicons-nametag',
+    'taxonomies' => array( 'category' )
   ));
 
     /* Pinegrow generated Custom Post Types End */
@@ -259,15 +262,6 @@ function pam_widgets_init() {
      * Register widget areas.
      */
     /* Pinegrow generated Register Sidebars Begin */
-
-    register_sidebar( array(
-    'name' => __( '123', 'pam' ),
-    'id' => '123',
-    'before_widget' => '<li id="%1$s" class="widget %2$s">',
-    'after_widget' => '</li>',
-    'before_title' => '<h3 class="widgettitle">',
-    'after_title' => '</h3>'
-  ) );
 
     /* Pinegrow generated Register Sidebars End */
 }
@@ -483,17 +477,6 @@ function pam_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'pam_sc_header_endereco', array(
     'label' => __( 'Endereço', 'pam' ),
     'type' => 'textarea',
-    'section' => 'pam_sc_header'
-  ));
-
-    $wp_customize->add_setting( 'header_facebook', array(
-    'type' => 'theme_mod',
-    'sanitize_callback' => 'esc_url_raw'
-  ));
-
-    $wp_customize->add_control( 'header_facebook', array(
-    'label' => __( 'Facebook', 'pam' ),
-    'type' => 'url',
     'section' => 'pam_sc_header'
   ));
 
@@ -737,6 +720,18 @@ function pam_customize_register( $wp_customize ) {
     'section' => 'pam_sc_partners'
   ));
 
+    $wp_customize->add_setting( 'main_title_p', array(
+    'type' => 'theme_mod',
+    'default' => __( 'Check out some recent news posts.', 'pam' ),
+    'sanitize_callback' => $pgwp_sanitize
+  ));
+
+    $wp_customize->add_control( 'main_title_p', array(
+    'label' => __( 'Sub-titulo', 'pam' ),
+    'type' => 'text',
+    'section' => 'pam_sc_partners'
+  ));
+
     $wp_customize->add_setting( 'pam_sc_header_facebook', array(
     'type' => 'theme_mod',
     'sanitize_callback' => 'esc_url_raw'
@@ -746,6 +741,17 @@ function pam_customize_register( $wp_customize ) {
     'label' => __( 'Facebook', 'pam' ),
     'type' => 'url',
     'section' => 'pam_sc_header'
+  ));
+
+    $wp_customize->add_setting( 'share_social_list', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => $pgwp_sanitize
+  ));
+
+    $wp_customize->add_control( 'share_social_list', array(
+    'label' => __( 'Mostrar Corpartilhar', 'pam' ),
+    'type' => 'checkbox',
+    'section' => 'pam_sc_blog'
   ));
 
     /* Pinegrow generated Customizer Controls End */

@@ -1,6 +1,7 @@
 <div class="partners"> 
   <div class="container"> 
-    <h4><?php echo get_theme_mod( 'title_h4', __( 'Brands Partners', 'pam' ) ); ?></h4> 
+    <h4><?php echo get_theme_mod( 'title_h4', __( 'Brands Partners', 'pam' ) ); ?></h4>
+    <p><?php echo get_theme_mod( 'main_title_p', __( 'Check out some recent news posts.', 'pam' ) ); ?></p> 
     <div class="slick-slider-area"> 
       <?php
         $partners_query_args = array(

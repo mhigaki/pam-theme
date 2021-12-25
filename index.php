@@ -19,6 +19,8 @@
 <?php get_template_part( 'template-parts/content/content-area', 'team-2' ); ?>
 <?php get_template_part( 'template-parts/content/content-area', 'testemonial-3' ); ?>
 <?php get_template_part( 'template-parts/content/content-area', 'blog' ); ?>
-<?php get_template_part( 'template-parts/content/content-area', 'partners' ); ?>
+<?php if ( get_theme_mod( 'display_pam_sc_partners' ) ) : ?>
+    <?php get_template_part( 'template-parts/content/content-area-partners' ); ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>

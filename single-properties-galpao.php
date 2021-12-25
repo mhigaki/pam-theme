@@ -62,16 +62,20 @@ $cidade = get_field( 'cidade' ); ?>
                             <!-- Property meta start -->
                             <div class="property-meta mb-40">
                                 <ul>
-                                    <li><i class="fa fa-bars"></i>
+                                    <li>
+                                        <i class="fa fa-bars"></i>
                                         <p><?php echo get_post_meta( get_the_ID(), 'property_id', true ); ?></p>
                                     </li>
-                                    <li><i class="flaticon-square"></i>
+                                    <li>
+                                        <i class="flaticon-square"></i>
                                         <p><?php echo get_field( 'informacoes_planta_area' ); ?></p>
                                     </li>
-                                    <li><i class="flaticon-vehicle"></i>
+                                    <li>
+                                        <i class="flaticon-vehicle"></i>
                                         <p><?php echo get_field( 'informacoes_planta_garagem' ); ?></p>
                                     </li>
-                                    <li><i class="flaticon-holidays"></i>
+                                    <li>
+                                        <i class="flaticon-holidays"></i>
                                         <p><?php echo get_field( 'informacoes_planta_banheiros' ); ?></p>
                                     </li>
                                 </ul>

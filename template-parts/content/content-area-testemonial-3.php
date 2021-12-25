@@ -22,8 +22,7 @@
                 <div class="content-box"> 
                   <div class="rating">
                     <?php echo get_field( 'rattings' ); ?>
-                  </div>
-                  <br/> 
+                  </div><br/> 
                   <p><?php the_content(); ?></p> 
                 </div>                 
                 <div class="media"> <a href="#"> <?php echo PG_Image::getPostImage( null, 'thumbnail', array(

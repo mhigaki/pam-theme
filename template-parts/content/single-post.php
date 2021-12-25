@@ -24,10 +24,24 @@
           <?php endif; ?>                       
         </div>         
       </div>       
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
-        <div class="blog-social-list"> <span><?php _e( 'Share', 'pam' ); ?></span> <a href="<?php echo get_theme_mod( 'pam_sc_header_facebook', '#' ); ?>" class="facebook-bg"> <i class="fa fa-facebook"></i> </a> <a href="<?php echo get_theme_mod( 'pam_sc_header_twitter', '#' ); ?>" class="twitter-bg"> <i class="fa fa-twitter"></i> </a>            <a href="<?php echo get_theme_mod( 'pam_sc_header_linkedin', '#' ); ?>" class="linkedin-bg"> <i class="fa fa-linkedin"></i> </a> <a href="<?php echo get_theme_mod( 'pam_sc_header_instagram', '#' ); ?>" class="pinterest-bg"> <i class="fa fa-pinterest"></i> </a> 
-        </div>         
-      </div>       
+      <?php if ( get_theme_mod( 'share_social_list' ) ) : ?>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
+          <div class="blog-social-list"> <span><?php _e( 'Share', 'pam' ); ?></span> 
+            <?php if ( get_theme_mod( 'pam_sc_header_facebook' ) ) : ?>
+              <a href="<?php echo get_theme_mod( 'pam_sc_header_facebook', '#' ); ?>" class="facebook-bg"> <i class="fa fa-facebook"></i> </a>
+            <?php endif; ?> 
+            <?php if ( get_theme_mod( 'pam_sc_header_twitter' ) ) : ?>
+              <a href="<?php echo get_theme_mod( 'pam_sc_header_twitter', '#' ); ?>" class="twitter-bg"> <i class="fa fa-twitter"></i> </a>
+            <?php endif; ?>              
+            <?php if ( get_theme_mod( 'pam_sc_header_linkedin' ) ) : ?>
+              <a href="<?php echo get_theme_mod( 'pam_sc_header_linkedin', '#' ); ?>" class="linkedin-bg"> <i class="fa fa-linkedin"></i> </a>
+            <?php endif; ?> 
+            <?php if ( get_theme_mod( 'pam_sc_header_instagram' ) ) : ?>
+              <a href="<?php echo get_theme_mod( 'pam_sc_header_instagram', '#' ); ?>" class="pinterest-bg"> <i class="fa fa-pinterest"></i> </a>
+            <?php endif; ?> 
+          </div>           
+        </div>
+      <?php endif; ?> 
     </div>
   <?php endif; ?> 
 </div>

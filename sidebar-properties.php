@@ -253,12 +253,18 @@
   <!-- Social media box start -->   
   <div class="social-media-box widget clearfix"> 
     <h3 class="sidebar-title"><?php _e( 'Social Media', 'pam' ); ?></h3> 
-    <?php wp_nav_menu( array(
-        'menu' => 'social',
-        'menu_class' => 'social-list',
-        'container' => '',
-        'theme_location' => 'social'
-    ) ); ?> 
+    <ul class="social-list"> 
+      <li> <a href="#" class="facebook-bg"> <i class="fa fa-facebook"></i> </a> 
+      </li>       
+      <li> <a href="#" class="twitter-bg"> <i class="fa fa-twitter"></i> </a> 
+      </li>       
+      <li> <a href="#" class="google-bg"> <i class="fa fa-google"></i> </a> 
+      </li>       
+      <li> <a href="#" class="linkedin-bg"> <i class="fa fa-linkedin"></i> </a> 
+      </li>       
+      <li> <a href="#" class="pinterest-bg"> <i class="fa fa-pinterest"></i> </a> 
+      </li>       
+    </ul>     
   </div>   
   <!-- Team 5 start -->   
   <div class="team-5 widget"> 

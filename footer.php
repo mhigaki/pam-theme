@@ -21,13 +21,17 @@
                                     </li>
                                 </ul>
                                 <ul class="clearfix social-list"> 
-                                    <li><a class="facebook" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <li>
+                                        <a class="facebook" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-facebook"></i></a>
                                     </li>                                     
-                                    <li><a href="#" class="twitter" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <li>
+                                        <a href="#" class="twitter" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-twitter"></i></a>
                                     </li>                                     
-                                    <li><a href="#" class="linkedin" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-linkedin"></i> </a>
+                                    <li>
+                                        <a href="#" class="linkedin" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-linkedin"></i> </a>
                                     </li>                                     
-                                    <li><a href="#" class="rss" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <li>
+                                        <a href="#" class="rss" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-instagram"></i></a>
                                     </li>                                     
                                 </ul>
                             </div>
@@ -37,8 +41,7 @@
                                 <h4> <?php _e( 'LINKS ÚTEIS', 'pam' ); ?> </h4>
                                 <?php if ( has_nav_menu( 'footer' ) ) : ?>
                                     <?php
-                                        PG_Smart_Walker_Nav_Menu::$options['template'] = '<li id="{ID}" class="{CLASSES}">
-                                                          <a {ATTRS}><i class="fa fa-angle-right"></i>{TITLE}</a>
+                                        PG_Smart_Walker_Nav_Menu::$options['template'] = '<li id="{ID}" class="{CLASSES}"><a {ATTRS}><i class="fa fa-angle-right"></i>{TITLE}</a>
                                                         </li>';
                                         wp_nav_menu( array(
                                           'container' => '',
@@ -53,21 +56,29 @@
                             <div class="footer-item clearfix">
                                 <h4> <?php _e( 'Gallery', 'pam' ); ?> </h4>
                                 <ul class="gallery">
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-1.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-1.jpg" alt="sub-properties"/> </a>
                                     </li>
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-2.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-2.jpg" alt="sub-properties"/> </a>
                                     </li>
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-3.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-3.jpg" alt="sub-properties"/> </a>
                                     </li>
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-4.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-4.jpg" alt="sub-properties"/> </a>
                                     </li>
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-6.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-6.jpg" alt="sub-properties"/> </a>
                                     </li>
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-5.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-5.jpg" alt="sub-properties"/> </a>
                                     </li>
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-7.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-7.jpg" alt="sub-properties"/> </a>
                                     </li>
-                                    <li><a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-8.jpg" alt="sub-properties"/> </a>
+                                    <li>
+                                        <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/sub-properties/sub-properties-8.jpg" alt="sub-properties"/> </a>
                                     </li>
                                 </ul>
                             </div>

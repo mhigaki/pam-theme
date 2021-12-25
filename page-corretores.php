@@ -40,8 +40,7 @@
                 <div class="col-md-6"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li>
-                                <i class="fa fa-phone"></i>
+                            <li><i class="fa fa-phone"></i>
                                 <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?> 
                             </li>                                         
                             <li> <a class="btn btn-md button-theme" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'contato', 'page' ) ) ); ?>"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
@@ -87,18 +86,15 @@
                                 <p><?php echo wp_trim_words( get_the_content(), 20, ' ... ' ); ?></p> 
                                 <ul class="social-list clearfix"> 
                                     <?php if ( get_field( 'facebook' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo get_field( 'facebook' ); ?>" class="facebook"><i class="fa fa-facebook"></i></a>
+                                        <li><a href="<?php echo get_field( 'facebook' ); ?>" class="facebook"><i class="fa fa-facebook"></i></a>
                                         </li>
                                     <?php endif; ?> 
                                     <?php if ( get_field( 'twitter' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo get_field( 'twitter' ); ?>" class="twitter"><i class="fa fa-twitter"></i></a>
+                                        <li><a href="<?php echo get_field( 'twitter' ); ?>" class="twitter"><i class="fa fa-twitter"></i></a>
                                         </li>
                                     <?php endif; ?> 
                                     <?php if ( get_field( 'instagram' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo get_field( 'instagram' ); ?>" class="instagram"><i class="fa fa-instagram"></i></a>
+                                        <li><a href="<?php echo get_field( 'instagram' ); ?>" class="instagram"><i class="fa fa-instagram"></i></a>
                                         </li>
                                     <?php endif; ?> 
                                     <?php if ( get_field( 'linkedin' ) ) : ?>
