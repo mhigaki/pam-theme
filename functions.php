@@ -279,7 +279,6 @@ function pam_customize_register( $wp_customize ) {
 
     $wp_customize->add_section( 'pam_sc_header', array(
     'title' => __( 'Top Bar', 'pam' ),
-    'description' => __( 'Seção Top Bar', 'pam' ),
     'panel' => 'pam_theme_settings',
     'priority' => '5'
   ));
@@ -387,39 +386,6 @@ function pam_customize_register( $wp_customize ) {
     'section' => 'pam_sc_categories'
   ));
 
-    $wp_customize->add_setting( 'pam_sc_header_twitter', array(
-    'type' => 'theme_mod',
-    'sanitize_callback' => 'esc_url_raw'
-  ));
-
-    $wp_customize->add_control( 'pam_sc_header_twitter', array(
-    'label' => __( 'Twitter', 'pam' ),
-    'type' => 'url',
-    'section' => 'pam_sc_header'
-  ));
-
-    $wp_customize->add_setting( 'pam_sc_header_linkedin', array(
-    'type' => 'theme_mod',
-    'sanitize_callback' => 'esc_url_raw'
-  ));
-
-    $wp_customize->add_control( 'pam_sc_header_linkedin', array(
-    'label' => __( 'Linkedin', 'pam' ),
-    'type' => 'url',
-    'section' => 'pam_sc_header'
-  ));
-
-    $wp_customize->add_setting( 'pam_sc_header_instagram', array(
-    'type' => 'theme_mod',
-    'sanitize_callback' => 'esc_url_raw'
-  ));
-
-    $wp_customize->add_control( 'pam_sc_header_instagram', array(
-    'label' => __( 'Instagram', 'pam' ),
-    'type' => 'url',
-    'section' => 'pam_sc_header'
-  ));
-
     $wp_customize->add_setting( 'pam_sc_team_main_title_h1', array(
     'type' => 'theme_mod',
     'default' => __( 'Our Agent', 'pam' ),
@@ -444,26 +410,17 @@ function pam_customize_register( $wp_customize ) {
     'section' => 'pam_sc_team'
   ));
 
-    $wp_customize->add_setting( 'share_social_list', array(
-    'type' => 'theme_mod',
-    'sanitize_callback' => $pgwp_sanitize
-  ));
-
-    $wp_customize->add_control( 'share_social_list', array(
-    'label' => __( 'Mostrar Corpartilhar', 'pam' ),
-    'type' => 'checkbox',
-    'section' => 'pam_sc_blog'
-  ));
-
     $wp_customize->add_setting( 'pam_sc_header_telefone', array(
     'type' => 'theme_mod',
     'sanitize_callback' => 'wp_filter_nohtml_kses'
   ));
 
     $wp_customize->add_control( 'pam_sc_header_telefone', array(
-    'label' => __( 'Telefone', 'pam' ),
+    'label' => __( 'DADOS DA PAM', 'pam' ),
+    'description' => __( 'Telefone Fixo', 'pam' ),
     'type' => 'text',
-    'section' => 'pam_sc_header'
+    'section' => 'pam_sc_header',
+    'priority' => '25'
   ));
 
     $wp_customize->add_setting( 'pam_sc_header_email', array(
@@ -472,9 +429,10 @@ function pam_customize_register( $wp_customize ) {
   ));
 
     $wp_customize->add_control( 'pam_sc_header_email', array(
-    'label' => __( 'E-Mail', 'pam' ),
+    'description' => __( 'E-Mail', 'pam' ),
     'type' => 'text',
     'section' => 'pam_sc_header',
+    'priority' => '30',
     'input_attrs' => 
       array(
         'placeholder' => 'contato@pamconsultoria.com.br'
@@ -487,9 +445,60 @@ function pam_customize_register( $wp_customize ) {
   ));
 
     $wp_customize->add_control( 'pam_sc_header_endereco', array(
-    'label' => __( 'Endereço', 'pam' ),
+    'description' => __( 'Endereço', 'pam' ),
     'type' => 'textarea',
-    'section' => 'pam_sc_header'
+    'section' => 'pam_sc_header',
+    'priority' => '35'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_header_facebook', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => 'esc_url_raw'
+  ));
+
+    $wp_customize->add_control( 'pam_sc_header_facebook', array(
+    'label' => __( 'MIDIAS SOCIAIS', 'pam' ),
+    'description' => __( 'Facebook', 'pam' ),
+    'type' => 'url',
+    'section' => 'pam_sc_header',
+    'priority' => '5'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_header_twitter', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => 'esc_url_raw'
+  ));
+
+    $wp_customize->add_control( 'pam_sc_header_twitter', array(
+    'description' => __( 'Twitter', 'pam' ),
+    'type' => 'url',
+    'section' => 'pam_sc_header',
+    'priority' => '10'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_header_linkedin', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => 'esc_url_raw'
+  ));
+
+    $wp_customize->add_control( 'pam_sc_header_linkedin', array(
+    'description' => __( 'Linkedin', 'pam' ),
+    'type' => 'url',
+    'section' => 'pam_sc_header',
+    'priority' => '15'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_header_instagram', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => 'esc_url_raw'
+  ));
+
+    $wp_customize->add_control( 'pam_sc_header_instagram', array(
+    'label' => '<i class="fa fa-instagram"></i>',
+    'description' => __( 'Instagram', 'pam' ),
+    'type' => 'url',
+    'section' => 'pam_sc_header',
+    'priority' => '20'
   ));
 
     $wp_customize->add_setting( 'display_pam_sc_features', array(
@@ -676,8 +685,7 @@ function pam_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'display_pam_sc_blog', array(
     'label' => __( 'Selecione para exibir', 'pam' ),
     'type' => 'checkbox',
-    'section' => 'pam_sc_blog',
-    'priority' => '0'
+    'section' => 'pam_sc_blog'
   ));
 
     $wp_customize->add_setting( 'main_title_h1', array(
@@ -739,15 +747,48 @@ function pam_customize_register( $wp_customize ) {
     'section' => 'pam_sc_partners'
   ));
 
-    $wp_customize->add_setting( 'pam_sc_header_facebook', array(
+    $wp_customize->add_setting( 'pam_sc_header_twitter', array(
     'type' => 'theme_mod',
     'sanitize_callback' => 'esc_url_raw'
   ));
 
-    $wp_customize->add_control( 'pam_sc_header_facebook', array(
-    'label' => __( 'Facebook', 'pam' ),
+    $wp_customize->add_control( 'pam_sc_header_twitter', array(
+    'label' => __( 'Twitter', 'pam' ),
     'type' => 'url',
     'section' => 'pam_sc_header'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_header_linkedin', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => 'esc_url_raw'
+  ));
+
+    $wp_customize->add_control( 'pam_sc_header_linkedin', array(
+    'label' => __( 'Linkedin', 'pam' ),
+    'type' => 'url',
+    'section' => 'pam_sc_header'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_header_instagram', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => 'esc_url_raw'
+  ));
+
+    $wp_customize->add_control( 'pam_sc_header_instagram', array(
+    'label' => __( 'Instagram', 'pam' ),
+    'type' => 'url',
+    'section' => 'pam_sc_header'
+  ));
+
+    $wp_customize->add_setting( 'share_social_list', array(
+    'type' => 'theme_mod',
+    'sanitize_callback' => $pgwp_sanitize
+  ));
+
+    $wp_customize->add_control( 'share_social_list', array(
+    'label' => __( 'Mostrar Corpartilhar', 'pam' ),
+    'type' => 'checkbox',
+    'section' => 'pam_sc_blog'
   ));
 
     /* Pinegrow generated Customizer Controls End */

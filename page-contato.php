@@ -40,8 +40,7 @@
                 <div class="col-md-6"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li>
-                                <i class="fa fa-phone"></i> 
+                            <li><i class="fa fa-phone"></i> 
                                 <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?>
                             </li>                                         
                             <li> <a class="btn btn-md button-theme" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'contato', 'page' ) ) ); ?>"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
@@ -59,7 +58,7 @@
             <div class=" col-lg-4 col-md-5"> 
                 <div class="contact-info"> 
                     <h3 class="heading"><?php _e( 'Escritório', 'pam' ); ?></h3> 
-                    <p><?php _e( 'Rua Joaquim Machado, 283 - Sala 43', 'pam' ); ?> <?php _e( 'Lapa - São Paulo - CEP: 05050 010', 'pam' ); ?></p> 
+                    <p><?php echo get_field( 'field_5fb3fd8e6ddd9' ); ?></p> 
                     <div class="media"> <i class="flaticon-technology-1"></i> 
                         <div class="media-body"> 
                             <h5 class="mt-0"><?php _e( 'Telefone:', 'pam' ); ?></h5> 
