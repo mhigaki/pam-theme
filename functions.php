@@ -494,7 +494,6 @@ function pam_customize_register( $wp_customize ) {
   ));
 
     $wp_customize->add_control( 'pam_sc_header_instagram', array(
-    'label' => '<i class="fa fa-instagram"></i>',
     'description' => __( 'Instagram', 'pam' ),
     'type' => 'url',
     'section' => 'pam_sc_header',

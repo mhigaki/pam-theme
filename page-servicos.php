@@ -1,9 +1,3 @@
-<?php
-/*
- Template Name: Pagina de Serviços
- Template Post Type: page
-*/
-?>
 <?php get_header(); ?>
 
 <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?>
@@ -53,8 +47,6 @@
         </div>                     
     </div>                 
 </div>             
-<?php get_template_part( 'template-parts/content/content-area-services-1' ); ?> 
-<?php get_template_part( 'template-parts/content/content-area', 'counters' ); ?> 
-<?php get_template_part( 'template-parts/content/content-area', 'testemonial-3' ); ?>             
+<?php get_template_part( 'template-parts/content/content-area-services-1' ); ?>                                       
 
 <?php get_footer(); ?>
