@@ -8,6 +8,7 @@
         <?php
           $testemonials_query_args = array(
             'post_type' => 'testemonials',
+            'post_status' => 'publish',
             'nopaging' => true,
             'order' => 'ASC',
             'orderby' => 'date'
@@ -20,10 +21,9 @@
             <div <?php post_class( 'slick-slide-item' ); ?> id="post-<?php the_ID(); ?>"> 
               <div class="testimonial-inner"> 
                 <div class="content-box"> 
-                  <div class="rating">
-                    <?php echo get_field( 'rattings' ); ?>
-                  </div><br/> 
-                  <p><?php the_content(); ?></p> 
+                  <p><?php the_content(); ?></p>
+                  <br/>
+                  <?php echo get_field( 'rattings' ); ?> 
                 </div>                 
                 <div class="media"> <a href="#"> <?php echo PG_Image::getPostImage( null, 'thumbnail', array(
                         'class' => 'img-fluid'

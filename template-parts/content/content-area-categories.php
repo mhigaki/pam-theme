@@ -10,7 +10,7 @@
         <div class="row"> 
           <div class="col-sm-6 wow fadeInLeft delay-04s col-pad"> 
             <div class="category"> 
-              <div class="category_bg_box cat-1-bg" href="<?php echo esc_url( get_field( 'tipo' ) ); ?>"> 
+              <div class="category_bg_box cat-1-bg"> 
                 <div class="category-overlay"> 
                   <div class="category-content"> 
                     <h3 class="category-title"> <a href="#"><?php _e( 'Apartment', 'pam' ); ?></a> </h3> <a href="properties-list-rightside.html" class="category-subtitle"><?php _e( '14 Properties', 'pam' ); ?></a> 

@@ -39,7 +39,7 @@
   <!-- Search Section start -->   
   <div class="search-section search-area-3 d-none d-xl-block d-lg-block" id="search-area-3"> 
     <div class="container"> 
-      <?php get_template_part( 'template-parts/section/section-search' ); ?> 
+      <?php get_template_part( 'template-parts/section/section', 'search' ); ?> 
     </div>     
   </div>   
   <!-- Search Section end -->   

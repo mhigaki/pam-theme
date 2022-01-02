@@ -46,9 +46,11 @@ function pam_setup() {
      */
     /* Pinegrow generated Image Sizes Begin */
 
-    add_image_size( 'agents', 360, 300, false );
+    add_image_size( 'agents', 400, 400, true );
     add_image_size( 'agent', 500, 600, true );
     add_image_size( 'banner', 1920, 253, true );
+    add_image_size( 'imovel', 315, 255, true );
+    add_image_size( 'img_post', 750, 500, true );
     /* Pinegrow generated Image Sizes End */
     
     /*
@@ -99,7 +101,6 @@ function pam_init() {
     'description' => __( 'Cadastro do Imóvel', 'pam' ),
     'public' => true,
     'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ),
-    'show_in_rest' => true,
     'show_in_menu' => true,
     'menu_icon' => 'dashicons-admin-multisite',
     'taxonomies' => array( 'category' )
@@ -113,8 +114,7 @@ function pam_init() {
       ),
     'description' => __( 'Nossos Corretores', 'pam' ),
     'public' => true,
-    'hierarchical' => true,
-    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'excerpt' ),
     'show_in_rest' => true,
     'show_in_menu' => true,
     'menu_icon' => 'dashicons-id',
@@ -154,7 +154,6 @@ function pam_init() {
         'name' => __( 'Testemunhas', 'pam' ),
         'singular_name' => __( 'A testemunha', 'pam' )
       ),
-    'public' => true,
     'supports' => array( 'title', 'editor', 'thumbnail' ),
     'show_in_rest' => true,
     'show_in_menu' => true,
@@ -223,6 +222,15 @@ function pam_init() {
     'hierarchical' => true
   ));
 
+    register_taxonomy('properties_area_comum', 'properties', array(
+    'labels' => 
+      array(
+        'name' => __( 'Area Comum', 'pam' ),
+        'singular_name' => __( 'area-comum', 'pam' )
+      ),
+    'show_in_rest' => true
+  ));
+
     /* Pinegrow generated Taxonomies End */
 
 }
@@ -243,7 +251,9 @@ function pam_custom_image_sizes_names( $sizes ) {
     return array_merge( $sizes, array(
         'agents' => __( 'Corretores' ),
         'agent' => __( 'Corretor' ),
-        'banner' => __( 'Sub Banner' )
+        'banner' => __( 'Sub Banner' ),
+        'imovel' => __( 'Imovel' ),
+        'img_post' => __( 'Img Post' )
     ) );
 
     /* Pinegrow generated Image Sizes Names End */
@@ -687,25 +697,25 @@ function pam_customize_register( $wp_customize ) {
     'section' => 'pam_sc_blog'
   ));
 
-    $wp_customize->add_setting( 'main_title_h1', array(
+    $wp_customize->add_setting( 'pam_sc_blog_main_title_h1', array(
     'type' => 'theme_mod',
     'default' => __( 'Latest news', 'pam' ),
     'sanitize_callback' => $pgwp_sanitize
   ));
 
-    $wp_customize->add_control( 'main_title_h1', array(
+    $wp_customize->add_control( 'pam_sc_blog_main_title_h1', array(
     'label' => __( 'Titulo', 'pam' ),
     'type' => 'text',
     'section' => 'pam_sc_blog'
   ));
 
-    $wp_customize->add_setting( 'main_title_p', array(
+    $wp_customize->add_setting( 'pam_sc_blog_main_title_p', array(
     'type' => 'theme_mod',
     'default' => __( 'Check out some recent news posts.', 'pam' ),
     'sanitize_callback' => $pgwp_sanitize
   ));
 
-    $wp_customize->add_control( 'main_title_p', array(
+    $wp_customize->add_control( 'pam_sc_blog_main_title_p', array(
     'label' => __( 'Sub-titulo', 'pam' ),
     'type' => 'text',
     'section' => 'pam_sc_blog'
@@ -722,25 +732,25 @@ function pam_customize_register( $wp_customize ) {
     'section' => 'pam_sc_partners'
   ));
 
-    $wp_customize->add_setting( 'title_h4', array(
+    $wp_customize->add_setting( 'pam_sc_partners_title_h4', array(
     'type' => 'theme_mod',
     'default' => __( 'Brands Partners', 'pam' ),
     'sanitize_callback' => $pgwp_sanitize
   ));
 
-    $wp_customize->add_control( 'title_h4', array(
+    $wp_customize->add_control( 'pam_sc_partners_title_h4', array(
     'label' => __( 'Titulo', 'pam' ),
     'type' => 'text',
     'section' => 'pam_sc_partners'
   ));
 
-    $wp_customize->add_setting( 'main_title_p', array(
+    $wp_customize->add_setting( 'pam_sc_partners_main_title_p', array(
     'type' => 'theme_mod',
     'default' => __( 'Check out some recent news posts.', 'pam' ),
     'sanitize_callback' => $pgwp_sanitize
   ));
 
-    $wp_customize->add_control( 'main_title_p', array(
+    $wp_customize->add_control( 'pam_sc_partners_main_title_p', array(
     'label' => __( 'Sub-titulo', 'pam' ),
     'type' => 'text',
     'section' => 'pam_sc_partners'
@@ -930,5 +940,35 @@ function pam_selectively_enqueue_admin_script( $page ) {
 add_action( 'admin_enqueue_scripts', 'pam_selectively_enqueue_admin_script' );
 
 /* End Enqueue Admin Styles and Scripts */
+
+
+/* Setting up theme supports options */
+
+function pam_setup_theme_supports() {
+    // Don't edit anything between the following comments.
+    /* Pinegrow generated Theme Supports Begin */
+    
+    //Tell WP to scope loaded editor styles to the block editor                    
+    add_theme_support( 'editor-styles' );
+    /* Pinegrow generated Theme Supports End */
+}
+add_action('after_setup_theme', 'pam_setup_theme_supports');
+
+/* End of setting up theme supports options */
+
+
+/* Loading editor styles for blocks */
+
+function pam_add_blocks_editor_styles() {
+    // Add blocks editor styles. Don't edit anything between the following comments.
+    /* Pinegrow generated Load Blocks Editor Styles Begin */
+    add_editor_style( 'css/bootstrap.min.css' );
+    add_editor_style( 'css/skins/red.css' );
+
+    /* Pinegrow generated Load Blocks Editor Styles End */
+}
+add_action('admin_init', 'pam_add_blocks_editor_styles');
+
+/* End of loading editor styles for blocks */
 
 ?>

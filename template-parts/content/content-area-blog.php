@@ -2,8 +2,8 @@
   <div class="container"> 
     <!-- Main title -->     
     <div class="main-title"> 
-      <h1><?php echo get_theme_mod( 'main_title_h1', __( 'Latest news', 'pam' ) ); ?></h1> 
-      <p><?php echo get_theme_mod( 'main_title_p', __( 'Check out some recent news posts.', 'pam' ) ); ?></p> 
+      <h1><?php echo get_theme_mod( 'pam_sc_blog_main_title_h1', __( 'Latest news', 'pam' ) ); ?></h1> 
+      <p><?php echo get_theme_mod( 'pam_sc_blog_main_title_p', __( 'Check out some recent news posts.', 'pam' ) ); ?></p> 
     </div>     
     <?php
       $post_query_args = array(

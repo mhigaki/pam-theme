@@ -4,81 +4,79 @@
       <form method="GET"> 
         <div class="row"> 
           <div class="col-lg-3 col-md-6 col-sm-6 col-6"> 
+            <?php $terms = get_terms( array(
+                'taxonomy' => 'properties_city',
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'hide_empty' => true
+            ) ) ?>
             <div class="form-group"> 
-              <select class="selectpicker search-fields" name="area"> 
-                <option>
-                  <?php _e( 'Area', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '3000', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '2600', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '2200', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '1800', 'pam' ); ?>
-                </option>                 
-              </select>               
+              <?php if( !empty( $terms ) ) : ?>
+                <select class="selectpicker search-fields" name="area"> 
+                  <?php foreach( $terms as $term ) : ?>
+                    <option>
+                      <?php echo $term->name; ?>
+                    </option>
+                  <?php endforeach; ?>                                                                             
+                </select>
+              <?php endif; ?> 
             </div>             
           </div>           
           <div class="col-lg-3 col-md-6 col-sm-6 col-6"> 
+            <?php $terms = get_terms( array(
+                'taxonomy' => 'properties_uf',
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'hide_empty' => true
+            ) ) ?>
             <div class="form-group"> 
-              <select class="selectpicker search-fields" name="property-status"> 
-                <option>
-                  <?php _e( 'Property Status', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'For Sale', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'For Rent', 'pam' ); ?>
-                </option>                 
-              </select>               
+              <?php if( !empty( $terms ) ) : ?>
+                <select class="selectpicker search-fields" name="property-status"> 
+                  <?php foreach( $terms as $term ) : ?>
+                    <option>
+                      <?php echo $term->name; ?>
+                    </option>
+                  <?php endforeach; ?>                                       
+                </select>
+              <?php endif; ?> 
             </div>             
           </div>           
           <div class="col-lg-3 col-md-6 col-sm-6 col-6"> 
+            <?php $terms = get_terms( array(
+                'taxonomy' => 'properties_status',
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'hide_empty' => true
+            ) ) ?>
             <div class="form-group"> 
-              <select class="selectpicker search-fields" name="property-types"> 
-                <option>
-                  <?php _e( 'Property Types', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'Apartments', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'Houses', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'Commercial', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'Garages', 'pam' ); ?>
-                </option>                 
-              </select>               
+              <?php if( !empty( $terms ) ) : ?>
+                <select class="selectpicker search-fields" name="property-types"> 
+                  <?php foreach( $terms as $term ) : ?>
+                    <option>
+                      <?php echo $term->name; ?>
+                    </option>
+                  <?php endforeach; ?>                                                                             
+                </select>
+              <?php endif; ?> 
             </div>             
           </div>           
+          <?php $terms = get_terms( array(
+              'taxonomy' => 'properties_types',
+              'orderby' => 'name',
+              'order' => 'ASC',
+              'hide_empty' => true
+          ) ) ?>
           <div class="col-lg-3 col-md-6 col-sm-6 col-6"> 
             <div class="form-group"> 
-              <select class="selectpicker search-fields" name="location"> 
-                <option>
-                  <?php _e( 'Location', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'United States', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'United Kingdom', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'American Samoa', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( 'Belgium', 'pam' ); ?>
-                </option>                 
-              </select>               
+              <?php if( !empty( $terms ) ) : ?>
+                <select class="selectpicker search-fields" name="location"> 
+                  <?php foreach( $terms as $term ) : ?>
+                    <option>
+                      <?php echo $term->name; ?>
+                    </option>
+                  <?php endforeach; ?>                                                                             
+                </select>
+              <?php endif; ?> 
             </div>             
           </div>           
         </div>         

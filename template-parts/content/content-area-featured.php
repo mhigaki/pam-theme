@@ -27,7 +27,7 @@
                         <?php $term_i = 0; ?>
                         <?php foreach( $terms as $term ) : ?>
                           <?php if( $term_i == 0 ) : ?>
-                            <span class="featured"><?php echo $term->name; ?></span>
+                            <span class="featured" style="background-color:<?php echo get_field( 'tax_color_status' ); ?>;"><?php echo $term->name; ?></span>
                           <?php endif; ?>
                           <?php $term_i++; ?>
                         <?php endforeach; ?>
@@ -37,10 +37,10 @@
                         <p class="price"><?php echo get_field( 'field_5faf728e8aa5e' ); ?></p>
                       <?php endif; ?> 
                       <?php echo get_field( 'field_606939e7915cd' ); ?> 
-                    </div><?php echo PG_Image::getPostImage( null, 'large', array(
-                        'class' => 'd-block w-100',
+                    </div><?php echo PG_Image::getPostImage( null, 'img_post', array(
+                        'class' => 'd-block img-fluid w-100',
                         'sizes' => '(max-width: 320px) 84vw, (max-width: 640px) 510px, (max-width: 768px) 70vw, (max-width: 1024px) 44vw, (max-width: 1280px) 350px, 350px'
-                    ), 'both', null ) ?> </a> 
+                    ), null, null ) ?> </a> 
                 </div>                 
                 <div class="detail"> 
                   <h1 class="title"> <?php $terms = get_the_terms( get_the_ID(), 'properties_types' ) ?><?php if( !empty( $terms ) ) : ?><?php foreach( $terms as $term ) : ?><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo $term->name; ?></a><?php endforeach; ?><?php endif; ?> </h1> 

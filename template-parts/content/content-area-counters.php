@@ -1,18 +1,16 @@
 <div class="counters overview-bgi"> 
   <div class="container"> 
     <div class="row"> 
-      <?php if ( get_theme_mod() ) : ?>
-        <div class="col-lg-3 col-md-3 col-sm-6 wow fadeInLeft delay-04s"> 
-          <div class="media counter-box"> 
-            <div class="media-left"> <i class="flaticon-tag"></i> 
-            </div>             
-            <div class="media-body"> 
-              <h1 class="counter"><?php _e( '967', 'pam' ); ?></h1> 
-              <p><?php _e( 'Listings For Sale', 'pam' ); ?></p> 
-            </div>             
+      <div class="col-lg-3 col-md-3 col-sm-6 wow fadeInLeft delay-04s"> 
+        <div class="media counter-box"> 
+          <div class="media-left"> <i class="flaticon-tag"></i> 
           </div>           
-        </div>
-      <?php endif; ?> 
+          <div class="media-body"> 
+            <h1 class="counter"><?php _e( '967', 'pam' ); ?></h1> 
+            <p><?php _e( 'Listings For Sale', 'pam' ); ?></p> 
+          </div>           
+        </div>         
+      </div>       
       <div class="col-lg-3 col-md-3 col-sm-6 wow fadeInLeft delay-04s"> 
         <div class="media counter-box"> 
           <div class="media-left"> <i class="flaticon-business"></i> 
