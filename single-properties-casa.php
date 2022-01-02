@@ -40,7 +40,8 @@
                             <div class="col-md-6"> 
                                 <div class="contact-info"> 
                                     <ul> 
-                                        <li><i class="fa fa-phone"></i> <span><?php _e( '+1-8X0-666-8X88', 'pam' ); ?></span>
+                                        <li>
+                                            <i class="fa fa-phone"></i> <span><?php _e( '+1-8X0-666-8X88', 'pam' ); ?></span>
                                         </li>                                         
                                         <li> <a href="contact.html" class="btn btn-md button-theme"><?php _e( 'Contact us', 'pam' ); ?></a> 
                                         </li>                                         
@@ -492,6 +493,38 @@ $cidade = get_field( 'cidade' ); ?>
                                         <!-- Inside properties end -->                                         
                                         <!-- Location start -->                                         
                                         <!-- Location end -->                                         
+                                    </div>                                     
+                                </div>
+                                <div class="properties-condition mb-40"> 
+                                    <h3 class="heading-2">  <?php _e( 'Condition', 'pam' ); ?> </h3> 
+                                    <div class="row"> 
+                                        <div class="col-md-4 col-sm-4 col-xs-12"> 
+                                            <ul class="condition"> 
+                                                <li>
+                                                    <?php the_terms( null, 'properties_area_comum', '<li> <i class="flaticon-furniture"></i> ', null, '</li>' ); ?>
+                                                </li>                                                 
+                                            </ul>                                             
+                                        </div>                                         
+                                        <div class="col-md-4 col-sm-4 col-xs-12"> 
+                                            <ul class="condition"> 
+                                                <li> <i class="flaticon-square"></i>
+                                                    <?php _e( '4800 sq ft', 'pam' ); ?> 
+                                                </li>                                                 
+                                                <li> <i class="flaticon-monitor"></i>
+                                                    <?php _e( 'TV Lounge', 'pam' ); ?> 
+                                                </li>                                                 
+                                            </ul>                                             
+                                        </div>                                         
+                                        <div class="col-md-4 col-sm-4 col-xs-12"> 
+                                            <ul class="condition"> 
+                                                <li> <i class="flaticon-vehicle"></i>
+                                                    <?php _e( '1 Garage', 'pam' ); ?> 
+                                                </li>                                                 
+                                                <li> <i class="flaticon-window"></i>
+                                                    <?php _e( 'Balcony', 'pam' ); ?> 
+                                                </li>                                                 
+                                            </ul>                                             
+                                        </div>                                         
                                     </div>                                     
                                 </div>                                 
                                 <!-- Properties amenities end -->                                 

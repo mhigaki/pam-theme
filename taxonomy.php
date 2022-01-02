@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php get_template_part( 'template-parts/header/banner', 'sub' ); ?> 
-<?php if ( is_post_type_archive( 'properties' ) ) : ?>
+<?php if ( is_tax() ) : ?>
     <div class="properties-section content-area"> 
         <div class="container"> 
             <div class="row"> 

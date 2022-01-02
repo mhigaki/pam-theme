@@ -38,17 +38,8 @@ $cidade = get_field( 'cidade' ); ?>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="pull-left">
-                                                <?php $terms = get_the_terms( get_the_ID(), 'properties_types' ) ?>
-                                                <?php if( !empty( $terms ) ) : ?>
-                                                    <?php $term_i = 0; ?>
-                                                    <?php foreach( $terms as $term ) : ?>
-                                                        <?php if( $term_i == 0 ) : ?>
-                                                            <h3><?php echo $term->name; ?></h3>
-                                                        <?php endif; ?>
-                                                        <?php $term_i++; ?>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                                <p> <i class="fa fa-map-marker"></i> <?php the_field( 'endereco' ); ?> </p>
+                                                <h3><?php _e( 'Galpão', 'pam' ); ?></h3>
+                                                <p> <i class="fa fa-map-marker"></i><?php echo get_field( 'endereco' ); ?><?php echo get_field( 'cidade' ); ?> </p>
                                             </div>
                                             <div class="pull-right">
                                                 <h3><span class="text-right"><?php echo get_field( 'valor' ); ?></span></h3>
@@ -62,20 +53,21 @@ $cidade = get_field( 'cidade' ); ?>
                             <!-- Property meta start -->
                             <div class="property-meta mb-40">
                                 <ul>
-                                    <li>
-                                        <i class="fa fa-bars"></i>
-                                        <p><?php echo get_post_meta( get_the_ID(), 'property_id', true ); ?></p>
+                                    <li><i class="flaticon-square"></i>
+                                        <p><?php echo get_post_meta( get_the_ID(), 'informacoes_planta_area_construida', true ); ?></p>
                                     </li>
-                                    <li>
-                                        <i class="flaticon-square"></i>
-                                        <p><?php echo get_field( 'informacoes_planta_area' ); ?></p>
+                                    <li><i class="fa fa-building-o"></i>
+                                        <?php $terms = get_the_terms( get_the_ID(), 'properties_types' ) ?>
+                                        <?php if( !empty( $terms ) ) : ?>
+                                            <?php foreach( $terms as $term ) : ?>
+                                                <p><?php echo $term->name; ?></p>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i>
+                                    <li><i class="flaticon-vehicle"></i>
                                         <p><?php echo get_field( 'informacoes_planta_garagem' ); ?></p>
                                     </li>
-                                    <li>
-                                        <i class="flaticon-holidays"></i>
+                                    <li><i class="flaticon-holidays"></i>
                                         <p><?php echo get_field( 'informacoes_planta_banheiros' ); ?></p>
                                     </li>
                                 </ul>

@@ -1,7 +1,7 @@
 <div class="our-team-3 content-area"> 
   <div class="container"> 
     <div class="main-title"> 
-      <h1><?php _e( 'Agent List', 'pam' ); ?></h1> 
+      <?php echo get_theme_mod( 'pam_sc_team_main_title_h1' ); ?> 
       <p><?php echo get_theme_mod( 'pam_sc_team_main_title_p', __( 'Meet out small team that make those great products.', 'pam' ) ); ?></p> 
     </div>     
     <?php

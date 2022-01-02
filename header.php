@@ -29,22 +29,22 @@
                                 <ul class="pull-right top-social-media">
                                     <?php if ( get_theme_mod( 'pam_sc_header_facebook' ) ) : ?>
                                         <li>
-                                            <a class="facebook" rel="nofollow noreferrer noopener" href="<?php echo get_theme_mod( 'pam_sc_header_facebook', '#' ); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                                            <a class="facebook" rel="nofollow noreferrer noopener" href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_facebook' ) ); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
                                         </li>
                                     <?php endif; ?>
                                     <?php if ( get_theme_mod( 'pam_sc_header_twitter' ) ) : ?>
                                         <li>
-                                            <a href="<?php echo get_theme_mod( 'pam_sc_header_twitter', '#' ); ?>" class="twitter" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-twitter"></i></a>
+                                            <a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_twitter' ) ); ?>" class="twitter" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-twitter"></i></a>
                                         </li>
                                     <?php endif; ?>
                                     <?php if ( get_theme_mod( 'pam_sc_header_linkedin' ) ) : ?>
                                         <li>
-                                            <a href="<?php echo get_theme_mod( 'pam_sc_header_linkedin', '#' ); ?>" class="linkedin" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-linkedin"></i> </a>
+                                            <a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_linkedin' ) ); ?>" class="linkedin" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-linkedin"></i> </a>
                                         </li>
                                     <?php endif; ?>
                                     <?php if ( get_theme_mod( 'pam_sc_header_instagram' ) ) : ?>
                                         <li>
-                                            <a href="<?php echo get_theme_mod( 'pam_sc_header_instagram', '#' ); ?>" class="instagram" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            <a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_instagram' ) ); ?>" class="instagram" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-instagram"></i></a>
                                         </li>
                                     <?php endif; ?>
                                     <li class="d-none"> <a href="#" class="rss"><i class="lnr lnr-lock"></i></a> 

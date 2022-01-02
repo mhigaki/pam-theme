@@ -9,7 +9,9 @@
 <?php get_template_part( 'template-parts/content/content-area', 'banner' ); ?>
 <div class="bg-grea d-xl-none search-area-2 search-section">
     <div class="container">
-        <?php get_template_part( 'template-parts/section/section', 'search' ); ?>
+        <div class="search-section-area">
+            <?php get_template_part( 'template-parts/section/section-search' ); ?>
+        </div>
     </div>
 </div>
 <?php if ( get_theme_mod( 'display_pam_sc_features' ) ) : ?>

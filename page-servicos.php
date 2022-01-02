@@ -35,10 +35,13 @@
                 <div class="col-md-5"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li> <i class="fa fa-phone"></i> 
-                                <?php _e( '+1-8X0-666-8X88', 'pam' ); ?> 
+                            <li> 
+                                <?php if( get_theme_mod( 'pam_sc_header_telefone' ) ) : ?>
+                                    <i class="fa fa-phone"></i>
+                                    <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?>
+                                <?php endif; ?> 
                             </li>                                         
-                            <li> <a href="contact.html" class="btn btn-md button-theme"><?php _e( 'Contact us', 'pam' ); ?></a> 
+                            <li> <a href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'contato', 'page' ) ) ); ?>" class="btn btn-md button-theme"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
                             </li>                                         
                         </ul>                                     
                     </div>                                 

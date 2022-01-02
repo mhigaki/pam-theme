@@ -36,8 +36,8 @@
                 <div class="col-md-6"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li>
-                                <i class="fa fa-phone"></i> <span><?php echo get_field( 'telefone_celular' ); ?></span>
+                            <li><i class="fa fa-phone"></i> 
+                                <?php echo get_field( 'telefone_celular' ); ?>
                             </li>                                         
                             <li> <a class="btn btn-md button-theme" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'contato', 'page' ) ) ); ?>"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
                             </li>                                         
