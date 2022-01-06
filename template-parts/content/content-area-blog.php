@@ -21,9 +21,9 @@
           <div <?php post_class( 'col-lg-4 col-md-6' ); ?> id="post-<?php the_ID(); ?>"> 
             <div class="blog-1"> 
               <div class="blog-photo"> 
-                <?php echo PG_Image::getPostImage( null, 'large', array(
+                <?php echo PG_Image::getPostImage( null, 'blog_fig', array(
                     'class' => 'img-fluid',
-                    'sizes' => 'max-width(320px) 85vw, max-width(640px) 510px, max-width(768px) 70vw, max-width(1024px) 34vw, max-width(1280px) 350px, 350px'
+                    'sizes' => '(max-width: 320px) 84vw, (max-width: 640px) 510px, (max-width: 768px) 70vw, (max-width: 1024px) 34vw, (max-width: 1280px) 350px, 350px'
                 ), 'both', null ) ?> 
                 <div class="profile-user"> 
                   <?php echo get_avatar( get_the_author_meta( 'ID' ), '45' ); ?> 

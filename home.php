@@ -64,28 +64,7 @@
                         </div>
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?> 
-                    <div class="pagination-box hidden-mb-45 text-center"> 
-                        <nav aria-label="Page navigation example"> 
-                            <?php if ( PG_Pagination::isPaginated() ) : ?>
-                                <ul class="pagination"> 
-                                    <li class="page-item"> 
-                                        <?php if( PG_Pagination::getCurrentPage() > 1 ) : ?>
-                                            <a class="page-link" <?php echo PG_Pagination::getPreviousHrefAttribute( $pam_blog ); ?>><i class="fa fa-angle-left"></i></a>
-                                        <?php endif; ?> 
-                                    </li>                                                 
-                                    <?php for( $page_num = 1; $page_num <= PG_Pagination::getMaxPages( $pam_blog ); $page_num++) : ?>
-                                        <li class="<?php if( $page_num == PG_Pagination::getCurrentPage() ) echo 'active'; ?> page-item"> <a class="page-link" href="<?php echo esc_url( get_pagenum_link( $page_num ) ) ?>"><?php echo $page_num ?></a> 
-                                        </li>
-                                    <?php endfor; ?> 
-                                    <li class="page-item"> 
-                                        <?php if( PG_Pagination::getCurrentPage() < PG_Pagination::getMaxPages( $pam_blog ) ) : ?>
-                                            <a class="page-link" <?php echo PG_Pagination::getNextHrefAttribute( $pam_blog ); ?>><i class="fa fa-angle-right"></i></a>
-                                        <?php endif; ?> 
-                                    </li>                                                 
-                                </ul>
-                            <?php endif; ?> 
-                        </nav>                                     
-                    </div>                                 
+                    <?php get_template_part( 'template-parts/navigation/pagination', 'box' ); ?> 
                 </div>
             <?php endif; ?> 
             <div class="col-lg-4 col-md-12"> 

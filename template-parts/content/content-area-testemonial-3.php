@@ -37,7 +37,22 @@
           <?php wp_reset_postdata(); ?>
         <?php else : ?>
           <p><?php _e( 'Sorry, no posts matched your criteria.', 'pam' ); ?></p>
-        <?php endif; ?>                            
+        <?php endif; ?> 
+        <div class="slick-slide-item"> 
+          <div class="testimonial-inner"> 
+            <div class="content-box"> 
+              <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-full"></i> 
+              </div>               
+              <p><?php _e( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever', 'pam' ); ?></p> 
+            </div>             
+            <div class="media"> <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/avatar/avatar-3.jpg" alt="testimonial-avatar" class="img-fluid"/> </a> 
+              <div class="media-body align-self-center"> 
+                <h5>  <?php _e( 'Maria Blank', 'pam' ); ?> </h5> 
+                <h6><?php _e( 'Office Manager', 'pam' ); ?></h6> 
+              </div>               
+            </div>             
+          </div>           
+        </div>                           
       </div>       
     </div>     
   </div>   

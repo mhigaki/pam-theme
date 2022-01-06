@@ -20,33 +20,19 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-8 col-sm-7">
-                                <div class="list-inline">
-                                    <a href="tel:<?php echo str_replace(' ', '', get_theme_mod( 'pam_sc_header_telefone' )); ?>"><i class="fa fa-phone"></i> <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?> </a>
-                                    <a href="mailto:<?php echo str_replace(' ', '', get_theme_mod( 'pam_sc_header_email' )); ?>"><i class="fa fa-envelope"> </i> <?php echo str_replace(' ', '', get_theme_mod( 'pam_sc_header_email' )); ?> </a>
+                                <div class="list-inline"><a href="tel:<?php echo str_replace(' ', '', get_theme_mod( 'pam_sc_header_telefone' )); ?>"><i class="fa fa-phone"></i> <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?> </a><a href="mailto:<?php echo str_replace(' ', '', get_theme_mod( 'pam_sc_header_email' )); ?>"><i class="fa fa-envelope"> </i> <?php echo str_replace(' ', '', get_theme_mod( 'pam_sc_header_email' )); ?> </a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-4 col-sm-5">
                                 <ul class="pull-right top-social-media">
-                                    <?php if ( get_theme_mod( 'pam_sc_header_facebook' ) ) : ?>
-                                        <li>
-                                            <a class="facebook" rel="nofollow noreferrer noopener" href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_facebook' ) ); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
-                                        </li>
-                                    <?php endif; ?>
-                                    <?php if ( get_theme_mod( 'pam_sc_header_twitter' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_twitter' ) ); ?>" class="twitter" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        </li>
-                                    <?php endif; ?>
-                                    <?php if ( get_theme_mod( 'pam_sc_header_linkedin' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_linkedin' ) ); ?>" class="linkedin" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-linkedin"></i> </a>
-                                        </li>
-                                    <?php endif; ?>
-                                    <?php if ( get_theme_mod( 'pam_sc_header_instagram' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_instagram' ) ); ?>" class="instagram" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        </li>
-                                    <?php endif; ?>
+                                    <li><a class="facebook" rel="nofollow noreferrer noopener" href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_facebook' ) ); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li><a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_twitter' ) ); ?>" class="twitter" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li><a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_linkedin' ) ); ?>" class="linkedin" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-linkedin"></i> </a>
+                                    </li>
+                                    <li><a href="<?php echo esc_url( get_theme_mod( 'pam_sc_header_instagram' ) ); ?>" class="instagram" rel="nofollow noreferrer noopener" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    </li>
                                     <li class="d-none"> <a href="#" class="rss"><i class="lnr lnr-lock"></i></a> 
                                     </li>
                                 </ul>
@@ -56,10 +42,8 @@
                 </div>
                 <div class="main-header">
                     <div class="container">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand logo" href="<?php echo esc_url( home_url() ); ?>"> <?php if( get_theme_mod( 'custom_logo' ) ) : ?><img src="<?php echo PG_Image::getUrl( get_theme_mod( 'custom_logo', esc_url( get_template_directory_uri() . '/img/logos/logo-site.svg' ) ), 'full' ) ?>" class="style-svg" width="130" height="40"/><?php endif; ?> </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                        <nav class="navbar navbar-expand-lg navbar-light"><a class="navbar-brand logo" href="<?php echo esc_url( home_url() ); ?>"> <?php if( get_theme_mod( 'custom_logo' ) ) : ?><img src="<?php echo PG_Image::getUrl( get_theme_mod( 'custom_logo', esc_url( get_template_directory_uri() . '/img/logos/logo-site.svg' ) ), 'full' ) ?>" class="style-svg" width="130" height="40"/><?php endif; ?> </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <?php wp_nav_menu( array(

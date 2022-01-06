@@ -50,7 +50,7 @@ function pam_setup() {
     add_image_size( 'agent', 500, 600, true );
     add_image_size( 'banner', 1920, 253, true );
     add_image_size( 'imovel', 315, 255, true );
-    add_image_size( 'img_post', 750, 500, true );
+    add_image_size( 'blog_fig', 1200, 630, true );
     /* Pinegrow generated Image Sizes End */
     
     /*
@@ -114,11 +114,12 @@ function pam_init() {
       ),
     'description' => __( 'Nossos Corretores', 'pam' ),
     'public' => true,
-    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'excerpt' ),
+    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
     'show_in_rest' => true,
     'show_in_menu' => true,
     'menu_icon' => 'dashicons-id',
-    'taxonomies' => array( 'category' )
+    'menu_position' => 20,
+    'taxonomies' => array( 'corretor' )
   ));
 
     register_post_type('sliders', array(
@@ -138,14 +139,12 @@ function pam_init() {
     'labels' => 
       array(
         'name' => __( 'Serviços', 'pam' ),
-        'singular_name' => __( 'Serviço', 'pam' )
+        'singular_name' => __( 'Servico', 'pam' )
       ),
     'public' => true,
-    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'revisions', 'page-attributes' ),
     'show_in_rest' => true,
-    'show_in_menu' => true,
-    'menu_icon' => 'dashicons-screenoptions',
-    'taxonomies' => array( 'category' )
+    'show_in_menu' => true
   ));
 
     register_post_type('testemonials', array(
@@ -154,10 +153,12 @@ function pam_init() {
         'name' => __( 'Testemunhas', 'pam' ),
         'singular_name' => __( 'A testemunha', 'pam' )
       ),
+    'public' => true,
     'supports' => array( 'title', 'editor', 'thumbnail' ),
     'show_in_rest' => true,
     'show_in_menu' => true,
-    'menu_icon' => 'dashicons-format-chat'
+    'menu_icon' => 'dashicons-format-chat',
+    'taxonomies' => array( 'pam_ctg' )
   ));
 
     register_post_type('partners', array(
@@ -172,7 +173,7 @@ function pam_init() {
     'show_in_rest' => true,
     'show_in_menu' => true,
     'menu_icon' => 'dashicons-nametag',
-    'taxonomies' => array( 'category' )
+    'taxonomies' => array( 'pam_category' )
   ));
 
     /* Pinegrow generated Custom Post Types End */
@@ -181,6 +182,15 @@ function pam_init() {
      * Register custom taxonomies. You can also move this code to a plugin.
      */
     /* Pinegrow generated Taxonomies Begin */
+
+    register_taxonomy('pam_category', '', array(
+    'labels' => 
+      array(
+        'name' => __( 'Cattt', 'pam' ),
+        'singular_name' => __( 'catttttts', 'pam' )
+      ),
+    'show_in_rest' => true
+  ));
 
     register_taxonomy('properties_types', 'properties', array(
     'labels' => 
@@ -253,7 +263,7 @@ function pam_custom_image_sizes_names( $sizes ) {
         'agent' => __( 'Corretor' ),
         'banner' => __( 'Sub Banner' ),
         'imovel' => __( 'Imovel' ),
-        'img_post' => __( 'Img Post' )
+        'blog_fig' => __( 'Blog Post' )
     ) );
 
     /* Pinegrow generated Image Sizes Names End */
@@ -286,6 +296,10 @@ function pam_customize_register( $wp_customize ) {
     // Do stuff with $wp_customize, the WP_Customize_Manager object.
 
     /* Pinegrow generated Customizer Controls Begin */
+
+    $wp_customize->add_section( 'pam_theme', array(
+    'title' => __( 'PAM Theme', 'pam' )
+  ));
 
     $wp_customize->add_section( 'pam_sc_header', array(
     'title' => __( 'Top Bar', 'pam' ),

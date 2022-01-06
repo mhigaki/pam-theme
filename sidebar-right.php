@@ -32,12 +32,13 @@
         <div <?php post_class( 'media' ); ?> id="post-<?php the_ID(); ?>"> 
           <div class="media-left"> 
             <?php echo PG_Image::getPostImage( null, 'thumbnail', array(
-                'class' => 'media-object'
+                'class' => 'media-object',
+                'sizes' => '(max-width: 1280px) 70px, 70px'
             ), 'both', null ) ?> 
           </div>           
           <div class="media-body"> 
             <h3 class="media-heading"> <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a> </h3> 
-            <p><?php the_modified_date(); ?></p>              
+            <?php the_modified_date( 'M d, Y', '<p>', '</p>' ); ?>              
           </div>           
         </div>
       <?php endwhile; ?>
@@ -50,21 +51,18 @@
   <div class="posts-by-category widget"> 
     <h3 class="sidebar-title"><?php _e( 'Categorias', 'pam' ); ?></h3> 
     <ul class="list-unstyled list-cat"> 
-      <li>
-        <?php wp_list_categories( array(
-            'orderby' => 'name',
-            'order' => 'ASC',
-            'style' => 'list',
-            'show_count' => true,
-            'use_desc_for_title' => false,
-            'hierarchical' => false,
-            'title_li' => '',
-            'number' => '5',
-            'current_category' => 'blog',
-            'tab_index' => '3',
-            'taxonomy' => 'category'
-        ) ); ?>
-      </li>                                          
+      <?php wp_list_categories( array(
+          'orderby' => 'name',
+          'order' => 'ASC',
+          'style' => 'list',
+          'use_desc_for_title' => false,
+          'exclude' => '14,2,16',
+          'hierarchical' => false,
+          'title_li' => '',
+          'show_option_none' => 'Sem Categorias',
+          'number' => '5',
+          'taxonomy' => 'category'
+      ) ); ?>                                    
     </ul>     
   </div>   
   <!-- Tags box Start -->   
@@ -76,15 +74,10 @@
           'number' => '10',
           'format' => 'list',
           'orderby' => 'name',
-          'order' => 'ASC'
+          'order' => 'ASC',
+          'taxonomy' => 'post_tag'
       )); ?>                                                         
     </ul>     
   </div>   
-  <!-- Latest reviews Start -->   
-  <?php the_widget( 'WP_Widget_Archives', array(
-      'title' => __( 'Arquivos', 'pam' )
-    ), array(
-      'before_title' => '<h3 class="sidebar-title">',
-      'after_title' => '</h3>'
-  ) ); ?> 
+  <!-- Latest reviews Start -->      
 </div>

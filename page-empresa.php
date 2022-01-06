@@ -1,9 +1,3 @@
-<?php
-/*
- Template Name: Sobre a Empresa
- Template Post Type: page
-*/
-?>
 <?php get_header(); ?>
 
 <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'banner' ) : null; ?>

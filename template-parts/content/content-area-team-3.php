@@ -7,12 +7,12 @@
     <?php
       $corretor_query_args = array(
         'category_name' => 'ceo,ceos, socios',
-        'post__in' => get_option( 'sticky_posts' ),
         'post_type' => 'post',
         'post_type' => 'corretor',
         'post_status' => 'publish',
         'nopaging' => true,
-        'orderby' => 'rand'
+        'order' => 'ASC',
+        'orderby' => 'menu_order'
       )
     ?>
     <?php $corretor_query = new WP_Query( $corretor_query_args ); ?>

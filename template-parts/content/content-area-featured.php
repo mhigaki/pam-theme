@@ -24,12 +24,8 @@
                 <div class="property-thumbnail"> <a href="<?php echo esc_url( get_permalink() ); ?>" class="property-img"> <div class="listing-badges"> 
                       <?php $terms = get_the_terms( get_the_ID(), 'properties_status' ) ?>
                       <?php if( !empty( $terms ) ) : ?>
-                        <?php $term_i = 0; ?>
                         <?php foreach( $terms as $term ) : ?>
-                          <?php if( $term_i == 0 ) : ?>
-                            <span class="featured" style="background-color:<?php echo get_field( 'tax_color_status' ); ?>;"><?php echo $term->name; ?></span>
-                          <?php endif; ?>
-                          <?php $term_i++; ?>
+                          <span class="<?php echo get_post_meta( get_the_ID(), 'tax_color_status', true ); ?>" style="background-color:<?php echo get_post_meta( get_the_ID(), 'tax_color_status', true ); ?>;"><?php echo $term->name; ?></span>
                         <?php endforeach; ?>
                       <?php endif; ?> 
                     </div> <div class="price-ratings-box"> 
