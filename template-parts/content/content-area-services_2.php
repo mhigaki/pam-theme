@@ -7,10 +7,7 @@
     </div>     
     <?php
       $servicos_query_args = array(
-        'post__in' => PG_Helper::getPostIdList( get_post_thumbnail_id() ),
-        'post_type' => 'any',
         'post_type' => 'servicos',
-        'post_status' => 'any',
         'posts_per_page' => 4,
         'ignore_sticky_posts' => true,
         'order' => 'ASC',
