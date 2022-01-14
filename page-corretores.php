@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?>
-<div class="sub-banner" style="background-image:url('http://pam.test/wp-content/themes/pam/img/sub-banner.jpg');<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
+<div class="sub-banner" style="background-image:url('http://127.0.0.1:40000/http://pam.test/wp-content/themes/pam/img/sub-banner.jpg');<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
     <div class="container"> 
         <div class="page-name"> 
             <h1><?php wp_title( '' ); ?></h1> 
@@ -40,7 +40,8 @@
                 <div class="col-md-6"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li><i class="fa fa-phone"></i>
+                            <li>
+                                <i class="fa fa-phone"></i>
                                 <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?> 
                             </li>                                         
                             <li> <a class="btn btn-md button-theme" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'contato', 'page' ) ) ); ?>"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
