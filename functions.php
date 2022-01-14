@@ -46,11 +46,11 @@ function pam_setup() {
      */
     /* Pinegrow generated Image Sizes Begin */
 
-    add_image_size( 'agents', 400, 400, true );
-    add_image_size( 'agent', 500, 600, true );
-    add_image_size( 'banner', 1920, 253, true );
-    add_image_size( 'imovel', 315, 255, true );
-    add_image_size( 'blog_fig', 1200, 630, true );
+    add_image_size( 'agents', 600, 600, false );
+    add_image_size( 'agent', 500, 600, false );
+    add_image_size( 'banner', 1920, 253, false );
+    add_image_size( 'imovel', 315, 255, false );
+    add_image_size( 'blog_fig', 1200, 630, false );
     /* Pinegrow generated Image Sizes End */
     
     /*
@@ -101,9 +101,10 @@ function pam_init() {
     'description' => __( 'Cadastro do Imóvel', 'pam' ),
     'public' => true,
     'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ),
+    'show_in_rest' => true,
     'show_in_menu' => true,
     'menu_icon' => 'dashicons-admin-multisite',
-    'taxonomies' => array( 'category' )
+    'taxonomies' => array( 'properties' )
   ));
 
     register_post_type('corretor', array(
@@ -142,9 +143,12 @@ function pam_init() {
         'singular_name' => __( 'Servico', 'pam' )
       ),
     'public' => true,
-    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'revisions', 'page-attributes' ),
+    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', 'post-formats', 'revisions', 'trackbacks', 'author', 'excerpt', 'comments' ),
     'show_in_rest' => true,
-    'show_in_menu' => true
+    'show_in_menu' => true,
+    'menu_icon' => 'dashicons-nametag',
+    'menu_position' => 20,
+    'taxonomies' => array( 'servicos' )
   ));
 
     register_post_type('testemonials', array(
@@ -183,23 +187,13 @@ function pam_init() {
      */
     /* Pinegrow generated Taxonomies Begin */
 
-    register_taxonomy('pam_category', '', array(
-    'labels' => 
-      array(
-        'name' => __( 'Cattt', 'pam' ),
-        'singular_name' => __( 'catttttts', 'pam' )
-      ),
-    'show_in_rest' => true
-  ));
-
     register_taxonomy('properties_types', 'properties', array(
     'labels' => 
       array(
         'name' => __( 'Imóveis-tipos', 'pam' ),
         'singular_name' => __( 'Imóvel-tipo', 'pam' )
       ),
-    'show_in_rest' => true,
-    'hierarchical' => true
+    'show_in_rest' => true
   ));
 
     register_taxonomy('properties_status', 'properties', array(
@@ -208,8 +202,7 @@ function pam_init() {
         'name' => __( 'Imóveis-Status', 'pam' ),
         'singular_name' => __( 'Imóvel-status', 'pam' )
       ),
-    'show_in_rest' => true,
-    'hierarchical' => true
+    'show_in_rest' => true
   ));
 
     register_taxonomy('properties_city', 'properties', array(
@@ -222,17 +215,16 @@ function pam_init() {
     'hierarchical' => true
   ));
 
-    register_taxonomy('properties_uf', 'properties', array(
+    register_taxonomy('properties_uf', array( 'corretor', 'properties' ), array(
     'labels' => 
       array(
         'name' => __( 'Imóveis-UF', 'pam' ),
         'singular_name' => __( 'Imóvel-uf', 'pam' )
       ),
-    'show_in_rest' => true,
-    'hierarchical' => true
+    'show_in_rest' => true
   ));
 
-    register_taxonomy('properties_area_comum', 'properties', array(
+    register_taxonomy('pam_area_comum', 'properties', array(
     'labels' => 
       array(
         'name' => __( 'Area Comum', 'pam' ),
@@ -408,30 +400,6 @@ function pam_customize_register( $wp_customize ) {
     'label' => __( 'Sub-titulo', 'pam' ),
     'type' => 'text',
     'section' => 'pam_sc_categories'
-  ));
-
-    $wp_customize->add_setting( 'pam_sc_team_main_title_h1', array(
-    'type' => 'theme_mod',
-    'default' => __( 'Our Agent', 'pam' ),
-    'sanitize_callback' => $pgwp_sanitize
-  ));
-
-    $wp_customize->add_control( 'pam_sc_team_main_title_h1', array(
-    'label' => __( 'Titulo', 'pam' ),
-    'type' => 'text',
-    'section' => 'pam_sc_team'
-  ));
-
-    $wp_customize->add_setting( 'pam_sc_team_main_title_p', array(
-    'type' => 'theme_mod',
-    'default' => __( 'Meet out small team that make those great products.', 'pam' ),
-    'sanitize_callback' => $pgwp_sanitize
-  ));
-
-    $wp_customize->add_control( 'pam_sc_team_main_title_p', array(
-    'label' => __( 'Sub-titulo', 'pam' ),
-    'type' => 'text',
-    'section' => 'pam_sc_team'
   ));
 
     $wp_customize->add_setting( 'pam_sc_header_telefone', array(
@@ -674,6 +642,30 @@ function pam_customize_register( $wp_customize ) {
     'type' => 'checkbox',
     'section' => 'pam_sc_team',
     'priority' => '0'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_team_main_title_h1', array(
+    'type' => 'theme_mod',
+    'default' => __( 'Our Agent', 'pam' ),
+    'sanitize_callback' => $pgwp_sanitize
+  ));
+
+    $wp_customize->add_control( 'pam_sc_team_main_title_h1', array(
+    'label' => __( 'Titulo', 'pam' ),
+    'type' => 'text',
+    'section' => 'pam_sc_team'
+  ));
+
+    $wp_customize->add_setting( 'pam_sc_team_main_title_p', array(
+    'type' => 'theme_mod',
+    'default' => __( 'Meet out small team that make those great products.', 'pam' ),
+    'sanitize_callback' => $pgwp_sanitize
+  ));
+
+    $wp_customize->add_control( 'pam_sc_team_main_title_p', array(
+    'label' => __( 'Sub-titulo', 'pam' ),
+    'type' => 'text',
+    'section' => 'pam_sc_team'
   ));
 
     $wp_customize->add_setting( 'display_pam_sc_testemonials', array(
