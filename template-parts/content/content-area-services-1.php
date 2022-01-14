@@ -12,7 +12,7 @@
           $servicos_query_args = array(
             'post_type' => 'servicos',
             'post_status' => 'publish',
-            'posts_per_page' => 6,
+            'posts_per_page' => 12,
             'order' => 'ASC',
             'orderby' => 'rand',
             'cache_results' => false
