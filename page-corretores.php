@@ -40,8 +40,7 @@
                 <div class="col-md-6"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li>
-                                <i class="fa fa-phone"></i>
+                            <li><i class="fa fa-phone"></i>
                                 <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?> 
                             </li>                                         
                             <li> <a class="btn btn-md button-theme" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'contato', 'page' ) ) ); ?>"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
