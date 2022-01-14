@@ -52,7 +52,7 @@
         <div class="row"> 
             <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12"> 
                 <div class="about-slider-box simple-slider"> 
-                    <?php echo get_field( 'slide_about' ); ?>                                  
+                    <img src="<?php echo PG_Image::getUrl( get_field( 'field_6019ea7582fb5' ), 'large' ) ?>" class="d-block img-fluid" width="750"/>                                  
                 </div>                             
             </div>                         
             <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12"> 
@@ -63,7 +63,6 @@
             </div>                         
         </div>                     
     </div>                 
-</div>             
-<?php get_template_part( 'template-parts/content/content-area', 'team-3' ); ?>             
+</div>                         
 
 <?php get_footer(); ?>

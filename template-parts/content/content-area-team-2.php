@@ -21,7 +21,7 @@
           <?php PG_Helper::rememberShownPost(); ?>
           <div <?php post_class( 'col-lg-3 col-md-6 col-sm-6 wow fadeInLeft delay-04s' ); ?> id="post-<?php the_ID(); ?>"> 
             <div class="team-1"> 
-              <div class="team-photo"> <a href="<?php echo esc_url( get_permalink() ); ?>"> <?php echo PG_Image::getPostImage( null, 'agent', array(
+              <div class="team-photo"> <a href="<?php echo esc_url( get_permalink() ); ?>"> <?php echo PG_Image::getPostImage( null, array(0,400),true, array(
                       'class' => 'img-fluid',
                       'sizes' => '(max-width: 320px) 84vw, (max-width: 640px) 240px, (max-width: 768px) 43vw, (max-width: 1024px) 34vw, (max-width: 1280px) 255px, 255px'
                   ), null, null ) ?> </a> 

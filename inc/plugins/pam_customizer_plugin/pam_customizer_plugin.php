@@ -104,7 +104,7 @@ function pam_public_scripts()
 
 function the_copyright()
 {
-	echo '<span> Copyright ©2021 - PAM Consultoria- Desenvolvido por <a href="http://higatech.net" target="_blank">MNH</a> </span>';
+	echo '<span> Copyright ©2021 - PAM Consultoria CRECI 38288-J - Desenvolvido por <a href="http://higatech.net" target="_blank">MNH</a> </span>';
 }
 
 //* Modify the admin footer text

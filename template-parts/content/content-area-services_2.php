@@ -8,16 +8,18 @@
     <?php
       $servicos_query_args = array(
         'post_type' => 'servicos',
+        'post_status' => 'publish',
         'posts_per_page' => 4,
         'ignore_sticky_posts' => true,
         'order' => 'ASC',
-        'orderby' => 'date'
+        'orderby' => 'menu_order'
       )
     ?>
     <?php $servicos_query = new WP_Query( $servicos_query_args ); ?>
     <?php if ( $servicos_query->have_posts() ) : ?>
       <div class="row wow"> 
-        <?php while ( $servicos_query->have_posts() ) : $servicos_query->the_post(); ?>
+        <?php $servicos_query_item_number = 0; ?>
+        <?php while ( $servicos_query->have_posts() && $servicos_query_item_number++ < 4 ) : $servicos_query->the_post(); ?>
           <?php PG_Helper::rememberShownPost(); ?>
           <div <?php post_class( 'col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInLeft delay-04s' ); ?> id="post-<?php the_ID(); ?>"> 
             <div class="service-info-5"> <i class="flaticon-apartment"></i> 

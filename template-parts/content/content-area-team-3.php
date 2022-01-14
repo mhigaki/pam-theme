@@ -24,10 +24,10 @@
             <div class="row team-3"> 
               <div class="col-xl-4 col-lg-5 col-md-12 col-pad "> 
                 <div class="photo"> 
-                  <?php echo PG_Image::getPostImage( null, 'thumbnail', array(
+                  <?php echo PG_Image::getPostImage( null, 'medium_large', array(
                       'class' => 'img-fluid',
-                      'sizes' => '(max-width: 320px) 84vw, (max-width: 768px) 90vw, (max-width: 1024px) 70vw, (max-width: 1600px) 369px, 369px'
-                  ), 'height', null ) ?>                    
+                      'sizes' => '(max-width: 320px) 84vw, (max-width: 640px) 508px, (max-width: 768px) 90vw, (max-width: 1024px) 70vw, (max-width: 1280px) 369px, 369px'
+                  ), null, null ) ?>                    
                 </div>                 
               </div>               
               <div class="col-xl-8 col-lg-7 col-md-12 col-pad align-self-center"> 

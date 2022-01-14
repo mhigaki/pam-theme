@@ -292,24 +292,24 @@ $cidade = get_field( 'cidade' ); ?>
                                                     </div>                                                     
                                                     <div class="col-md-4 col-sm-6"> 
                                                         <ul> 
-                                                            <?php if ( get_field( 'informacoes_planta_area' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Área(m²):', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'informacoes_planta_area' ); ?> 
-                                                                </li>
-                                                            <?php endif; ?>
                                                             <?php if ( get_field( 'informacoes_planta_garagem' ) ) : ?>
                                                                 <li> <strong><?php _e( 'Vagas:', 'pam' ); ?></strong>
                                                                     <?php echo get_field( 'informacoes_planta_garagem' ); ?> 
                                                                 </li>
                                                             <?php endif; ?>
-                                                            <?php if ( get_field( 'informacoes_planta_banheiros' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Banheiro:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'informacoes_planta_banheiros' ); ?> 
+                                                            <?php if ( get_field( 'informacoes_planta_quartos' ) ) : ?>
+                                                                <li> <strong><?php _e( 'Nº de Torres:', 'pam' ); ?></strong>
+                                                                    <?php echo get_field( 'informacoes_planta_quartos' ); ?> 
                                                                 </li>
                                                             <?php endif; ?>
-                                                            <?php if ( get_field( 'informacoes_planta_quartos' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Quartos:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'informacoes_planta_quartos' ); ?> 
+                                                            <?php if ( get_field( 'ano' ) ) : ?>
+                                                                <li> <strong><?php _e( 'Un. por Andar:', 'pam' ); ?></strong>
+                                                                    <?php echo get_field( 'field_6001dd4d6d977' ); ?>
+                                                                </li>
+                                                            <?php endif; ?>
+                                                            <?php if ( get_field( 'ano' ) ) : ?>
+                                                                <li> <strong><?php _e( 'Andar:', 'pam' ); ?></strong>
+                                                                    <?php echo get_field( 'field_6001dd4d6d977' ); ?>
                                                                 </li>
                                                             <?php endif; ?> 
                                                         </ul>                                                         
@@ -327,8 +327,13 @@ $cidade = get_field( 'cidade' ); ?>
                                                                 </li>
                                                             <?php endif; ?>
                                                             <?php if ( get_field( 'ano' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Construído em:', 'pam' ); ?></strong>
+                                                                <li> <strong><?php _e( 'Sacada:', 'pam' ); ?></strong>
                                                                     <?php echo get_field( 'field_6001dd4d6d977' ); ?>
+                                                                </li>
+                                                            <?php endif; ?>
+                                                            <?php if ( get_field( 'informacoes_planta_area' ) ) : ?>
+                                                                <li> <strong><?php _e( 'Área(m²):', 'pam' ); ?></strong>
+                                                                    <?php echo get_field( 'informacoes_planta_area' ); ?> 
                                                                 </li>
                                                             <?php endif; ?> 
                                                         </ul>                                                         

@@ -1,6 +1,6 @@
 <?php
 /*
- The template for displaying: Page Corretores
+ The template for displaying: Pagina Equipe
  */
 ?>
 <?php get_header(); ?>
@@ -40,8 +40,7 @@
                 <div class="col-md-6"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li>
-                                <i class="fa fa-phone"></i>
+                            <li><i class="fa fa-phone"></i>
                                 <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?> 
                             </li>                                         
                             <li> <a class="btn btn-md button-theme" href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'contato', 'page' ) ) ); ?>"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
@@ -52,73 +51,7 @@
             </div>                         
         </div>                     
     </div>                 
-</div>             
-<div class="our-team-2 content-area"> 
-    <div class="container"> 
-        <!-- Main title -->                     
-        <div class="main-title"> 
-            <h1><?php the_title(); ?></h1>
-            <?php the_content(); ?> 
-        </div>                     
-        <?php
-            $corretor_query_args = array(
-              'post_type' => 'corretor',
-              'posts_per_page' => 6,
-              'order' => 'ASC',
-              'orderby' => 'date'
-            )
-        ?>
-        <?php $corretor_query = new WP_Query( $corretor_query_args ); ?>
-        <?php if ( $corretor_query->have_posts() ) : ?>
-            <div class="row"> 
-                <?php while ( $corretor_query->have_posts() ) : $corretor_query->the_post(); ?>
-                    <?php PG_Helper::rememberShownPost(); ?>
-                    <div <?php post_class( 'col-xl-4 col-lg-4 col-md-6 col-sm-6' ); ?> id="post-<?php the_ID(); ?>"> 
-                        <div class="team-2"> 
-                            <div class="team-photo"> <a href="<?php echo esc_url( get_permalink() ); ?>"> <?php echo PG_Image::getPostImage( null, 'agents', array(
-                                          'class' => 'img-fluid',
-                                          'sizes' => '(max-width: 320px) 84vw, (max-width: 640px) 240px, (max-width: 768px) 43vw, (max-width: 1024px) 34vw, (max-width: 1280px) 350px, 350px',
-                                          'loading' => 'lazy'
-                                    ), null, null ) ?> </a> 
-                            </div>                                         
-                            <div class="team-details"> 
-                                <h6><b><?php echo get_field( 'creci_numero' ); ?></b></h6> 
-                                <h5><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h5> 
-                                <p><?php echo wp_trim_words( get_the_content(), 20, ' ... ' ); ?></p> 
-                                <ul class="social-list clearfix"> 
-                                    <?php if ( get_field( 'facebook' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo get_field( 'facebook' ); ?>" class="facebook"><i class="fa fa-facebook"></i></a>
-                                        </li>
-                                    <?php endif; ?> 
-                                    <?php if ( get_field( 'twitter' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo get_field( 'twitter' ); ?>" class="twitter"><i class="fa fa-twitter"></i></a>
-                                        </li>
-                                    <?php endif; ?> 
-                                    <?php if ( get_field( 'instagram' ) ) : ?>
-                                        <li>
-                                            <a href="<?php echo get_field( 'instagram' ); ?>" class="instagram"><i class="fa fa-instagram"></i></a>
-                                        </li>
-                                    <?php endif; ?> 
-                                    <?php if ( get_field( 'linkedin' ) ) : ?>
-                                        <li>
-                                            <?php if ( get_field( 'linkedin' ) ) : ?>
-                                                <a href="<?php echo get_field( 'field2' ); ?>" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                            <?php endif; ?>
-                                        </li>
-                                    <?php endif; ?> 
-                                </ul>                                             
-                            </div>                                         
-                        </div>                                     
-                    </div>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?> 
-            </div>
-        <?php else : ?>
-            <p><?php _e( 'Sorry, no posts matched your criteria.', 'pam' ); ?></p>
-        <?php endif; ?> 
-    </div>                 
-</div>                         
+</div>
+<?php get_template_part( 'template-parts/content/content-area', 'team-3' ); ?>             
 
 <?php get_footer(); ?>
