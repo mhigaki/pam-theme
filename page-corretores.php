@@ -52,6 +52,6 @@
         </div>                     
     </div>                 
 </div>
-<?php get_template_part( 'template-parts/content/content-area', 'team-3' ); ?>             
+<?php get_template_part( 'template-parts/content/content-area-team-3' ); ?>             
 
 <?php get_footer(); ?>
