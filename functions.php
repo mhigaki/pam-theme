@@ -215,7 +215,7 @@ function pam_init() {
     'hierarchical' => true
   ));
 
-    register_taxonomy('properties_uf', array( 'corretor', 'properties' ), array(
+    register_taxonomy('properties_uf', 'properties', array(
     'labels' => 
       array(
         'name' => __( 'Imóveis-UF', 'pam' ),

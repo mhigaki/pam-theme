@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?>
-<div class="sub-banner" style="background-image:url('http://127.0.0.1:40000/http://pam.test/wp-content/themes/pam/img/sub-banner.jpg');<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
+<div class="sub-banner" style="background-image:url('http://pam.test/wp-content/themes/pam/img/sub-banner.jpg');<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
     <div class="container"> 
         <div class="page-name"> 
             <h1><?php wp_title( '' ); ?></h1> 
@@ -52,6 +52,6 @@
         </div>                     
     </div>                 
 </div>
-<?php get_template_part( 'template-parts/content/content-area-team-3' ); ?>             
+<?php get_template_part( 'template-parts/content/content-area', 'team-3' ); ?>             
 
 <?php get_footer(); ?>

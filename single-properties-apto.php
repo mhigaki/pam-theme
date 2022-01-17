@@ -20,7 +20,9 @@
                                     <ul> 
                                         <li> <a href="index-2.html"><?php _e( 'Index', 'pam' ); ?></a> 
                                         </li>                                         
-                                        <li><span>/</span><span><?php the_terms( '0', 'properties_types' ); ?></span>
+                                        <li>
+                                            <span>/</span>
+                                            <span><?php the_terms( '0', 'properties_types' ); ?></span>
                                         </li>                                         
                                     </ul>                                     
                                 </div>
@@ -30,7 +32,8 @@
                             <div class="col-md-6"> 
                                 <div class="contact-info"> 
                                     <ul> 
-                                        <li><i class="fa fa-phone"></i> <span></span>
+                                        <li>
+                                            <i class="fa fa-phone"></i> <span></span>
                                             <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?>
                                         </li>                                         
                                         <li> <a href="contact.html" class="btn btn-md button-theme"><?php _e( 'Contact us', 'pam' ); ?></a> 
@@ -292,26 +295,18 @@ $cidade = get_field( 'cidade' ); ?>
                                                     </div>                                                     
                                                     <div class="col-md-4 col-sm-6"> 
                                                         <ul> 
-                                                            <?php if ( get_field( 'informacoes_planta_garagem' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Vagas:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'informacoes_planta_garagem' ); ?> 
-                                                                </li>
-                                                            <?php endif; ?>
-                                                            <?php if ( get_field( 'informacoes_planta_quartos' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Nº de Torres:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'informacoes_planta_quartos' ); ?> 
-                                                                </li>
-                                                            <?php endif; ?>
-                                                            <?php if ( get_field( 'ano' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Un. por Andar:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'field_6001dd4d6d977' ); ?>
-                                                                </li>
-                                                            <?php endif; ?>
-                                                            <?php if ( get_field( 'ano' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Andar:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'field_6001dd4d6d977' ); ?>
-                                                                </li>
-                                                            <?php endif; ?> 
+                                                            <li> <strong><?php _e( 'Vagas:', 'pam' ); ?></strong>
+                                                                <?php echo get_field( 'informacoes_planta_garagem' ); ?> 
+                                                            </li>
+                                                            <li> <strong><?php _e( 'Nº de Torres:', 'pam' ); ?></strong>
+                                                                <?php echo get_field( 'field_61d937bf4d427' ); ?> 
+                                                            </li>
+                                                            <li> <strong><?php _e( 'Un. por Andar:', 'pam' ); ?></strong>
+                                                                <?php echo get_field( 'field_61e12c454cc88' ); ?>
+                                                            </li>
+                                                            <li> <strong><?php _e( 'Andar:', 'pam' ); ?></strong>
+                                                                <?php echo get_field( 'field_61d9369e4d425' ); ?>
+                                                            </li>                                                             
                                                         </ul>                                                         
                                                     </div>                                                     
                                                     <div class="col-md-4 col-sm-6"> 
@@ -328,7 +323,7 @@ $cidade = get_field( 'cidade' ); ?>
                                                             <?php endif; ?>
                                                             <?php if ( get_field( 'ano' ) ) : ?>
                                                                 <li> <strong><?php _e( 'Sacada:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'field_6001dd4d6d977' ); ?>
+                                                                    <?php echo get_field( 'field_61d937904d426' ); ?>
                                                                 </li>
                                                             <?php endif; ?>
                                                             <?php if ( get_field( 'informacoes_planta_area' ) ) : ?>
@@ -476,6 +471,29 @@ $cidade = get_field( 'cidade' ); ?>
                                                 <?php endforeach; ?> 
                                             </ul>                                             
                                         <?php endif; ?> 
+                                        </div>                                         
+                                        <!-- Properties amenities end -->                                         
+                                        <!-- Inside properties start -->                                         
+                                        <!-- Inside properties end -->                                         
+                                        <!-- Location start -->                                         
+                                        <!-- Location end -->                                         
+                                    </div>                                     
+                                </div>
+                                <div class="properties-amenities mb-40"> 
+                                    <h3 class="heading-2"><?php _e( 'Área Comum', 'pam' ); ?></h3> 
+                                    <div class="row"> 
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> 
+                                            <?php $terms = get_the_terms( get_the_ID(), 'pam_area_comum' ) ?>
+                                            <?php if( !empty( $terms ) ) : ?>
+                                                <?php $term_i = 0; ?>
+                                                <?php foreach( $terms as $term ) : ?>
+                                                    <?php if( $term_i >= 0 && $term_i <= 3 ) : ?>
+                                                        <ul class="amenities"> <i class="fa fa-check-square-o"></i><span><?php echo $term->name; ?></span> 
+                                                        </ul>
+                                                    <?php endif; ?>
+                                                    <?php $term_i++; ?>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?> 
                                         </div>                                         
                                         <!-- Properties amenities end -->                                         
                                         <!-- Inside properties start -->                                         

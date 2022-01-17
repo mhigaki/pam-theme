@@ -454,8 +454,9 @@ template {
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid rgba(0,0,0,.1);
+    border-top: 1px double rgba(242, 16, 16, 0.1);
+    border-left-width: 0;
+    border-right-width: 0;
 }
 
 .small,
@@ -7227,7 +7228,8 @@ a.bg-dark:focus,
 
 .align-self-center {
     -ms-flex-item-align: center!important;
-    align-self: center!important;
+    align-self: flex-start;
+    margin-top: 50px;
 }
 
 .align-self-baseline {

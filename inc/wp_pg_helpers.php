@@ -81,6 +81,11 @@ if(! class_exists( 'PG_Image' )) {
             }
             return $img;
         }
+
+        static function getAltText( $id, $default ) {
+            $r = trim( wp_strip_all_tags( get_post_meta( $id, '_wp_attachment_image_alt', true ) ) );
+            return empty($r) ? $default : $r;
+        }
     }
 }
 

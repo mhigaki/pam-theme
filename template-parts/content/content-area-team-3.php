@@ -6,7 +6,6 @@
     </div>     
     <?php
       $corretor_query_args = array(
-        'category_name' => 'ceo,ceos, socios',
         'post_type' => 'post',
         'post_type' => 'corretor',
         'post_status' => 'publish',
@@ -31,8 +30,9 @@
                 </div>                 
               </div>               
               <div class="col-xl-8 col-lg-7 col-md-12 col-pad align-self-center"> 
-                <div class="detail">                    
-                  <h4> <a href="agent-detail.html"><?php the_title(); ?></a> </h4> 
+                <div class="detail"> 
+                  <h3><?php the_title(); ?></h3> 
+                  <h5 style="text-transform: uppercase;"><?php echo get_field( 'field_5fa80f70d42df' ); ?></h5> 
                   <?php the_content(); ?> 
                 </div>                 
               </div>               
