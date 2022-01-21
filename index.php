@@ -15,7 +15,7 @@
     </div>
 </div>
 <?php if ( get_theme_mod( 'display_pam_sc_features' ) ) : ?>
-    <?php get_template_part( 'template-parts/content/content-area-featured' ); ?>
+    <?php get_template_part( 'template-parts/content/content-area', 'featured' ); ?>
 <?php endif; ?>
 <?php if ( get_theme_mod( 'display_pam_sc_service' ) ) : ?>
     <?php get_template_part( 'template-parts/content/content-area-services_2' ); ?>

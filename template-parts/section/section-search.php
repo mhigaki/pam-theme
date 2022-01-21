@@ -83,25 +83,8 @@
         <div class="row"> 
           <div class="col-lg-3 col-md-6 col-sm-6 col-6"> 
             <div class="form-group"> 
-              <select class="selectpicker search-fields" name="max-area"> 
-                <option>
-                  <?php _e( 'Max Area (Sq Ff)', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '2400', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '2800', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '3200', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '3600', 'pam' ); ?>
-                </option>                 
-                <option>
-                  <?php _e( '4000', 'pam' ); ?>
-                </option>                 
+              <select class="selectpicker search-fields" name="max-area">
+                <?php the_taxonomies( array()); ?>
               </select>               
             </div>             
           </div>           

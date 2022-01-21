@@ -21,7 +21,8 @@
             <div <?php post_class( 'slick-slide-item' ); ?> id="post-<?php the_ID(); ?>"> 
               <div class="testimonial-inner"> 
                 <div class="content-box"> 
-                  <p><?php the_content(); ?></p><br/>
+                  <p><?php the_content(); ?></p>
+                  <br/>
                   <?php echo get_field( 'rattings' ); ?> 
                 </div>                 
                 <div class="media"> <a href="#"> <?php echo PG_Image::getPostImage( null, 'thumbnail', array(

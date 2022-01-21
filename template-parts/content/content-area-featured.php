@@ -25,7 +25,7 @@
                       <?php $terms = get_the_terms( get_the_ID(), 'properties_status' ) ?>
                       <?php if( !empty( $terms ) ) : ?>
                         <?php foreach( $terms as $term ) : ?>
-                          <span class="<?php echo get_post_meta( get_the_ID(), 'tax_color_status', true ); ?>" style="background-color:<?php echo get_post_meta( get_the_ID(), 'tax_color_status', true ); ?>;"><?php echo $term->name; ?></span>
+                          <span class="featured"><?php echo $term->name; ?></span>
                         <?php endforeach; ?>
                       <?php endif; ?> 
                     </div> <div class="price-ratings-box"> 
