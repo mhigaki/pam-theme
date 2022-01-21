@@ -36,7 +36,7 @@
                                             <i class="fa fa-phone"></i> <span></span>
                                             <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?>
                                         </li>                                         
-                                        <li> <a href="contact.html" class="btn btn-md button-theme"><?php _e( 'Contact us', 'pam' ); ?></a> 
+                                        <li> <a class="btn btn-md button-theme" href="contact.html"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
                                         </li>                                         
                                     </ul>                                     
                                 </div>                                 
@@ -278,9 +278,6 @@ $cidade = get_field( 'cidade' ); ?>
                                                             <li> <strong><?php _e( 'ID:', 'pam' ); ?></strong> 
                                                                 <?php the_ID(); ?> 
                                                             </li>                                                             
-                                                            <li> <strong><?php _e( 'Preço:', 'pam' ); ?></strong> 
-                                                                <?php echo get_field( 'valor' ); ?> 
-                                                            </li>
                                                             <?php if ( get_field( 'valor_do_condominio' ) ) : ?>
                                                                 <li> <strong><?php _e( 'Condomínio:&nbsp;', 'pam' ); ?></strong>
                                                                     <?php echo get_field( 'valor_do_condominio' ); ?> 
@@ -295,9 +292,6 @@ $cidade = get_field( 'cidade' ); ?>
                                                     </div>                                                     
                                                     <div class="col-md-4 col-sm-6"> 
                                                         <ul> 
-                                                            <li> <strong><?php _e( 'Vagas:', 'pam' ); ?></strong>
-                                                                <?php echo get_field( 'informacoes_planta_garagem' ); ?> 
-                                                            </li>
                                                             <li> <strong><?php _e( 'Nº de Torres:', 'pam' ); ?></strong>
                                                                 <?php echo get_field( 'field_61d937bf4d427' ); ?> 
                                                             </li>
@@ -316,19 +310,14 @@ $cidade = get_field( 'cidade' ); ?>
                                                                     <?php echo get_field( 'cidade' ); ?> 
                                                                 </li>
                                                             <?php endif; ?>
+                                                            <li> <strong><?php _e( 'Vagas:', 'pam' ); ?></strong>
+                                                                <?php echo get_field( 'informacoes_planta_garagem' ); ?> 
+                                                            </li>
                                                             <?php if ( get_field( 'tipo_do_imovel' ) ) : ?>
                                                                 <li> <strong><?php _e( 'Tipo :', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'tipo_do_imovel' ); ?> 
-                                                                </li>
-                                                            <?php endif; ?>
-                                                            <?php if ( get_field( 'ano' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Sacada:', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'field_61d937904d426' ); ?>
-                                                                </li>
-                                                            <?php endif; ?>
-                                                            <?php if ( get_field( 'informacoes_planta_area' ) ) : ?>
-                                                                <li> <strong><?php _e( 'Área(m²):', 'pam' ); ?></strong>
-                                                                    <?php echo get_field( 'informacoes_planta_area' ); ?> 
+                                                                    <div>
+                                                                        <?php the_terms( get_the_ID(), 'properties_status' ); ?>
+                                                                    </div>                                                                     
                                                                 </li>
                                                             <?php endif; ?> 
                                                         </ul>                                                         
@@ -367,7 +356,7 @@ $cidade = get_field( 'cidade' ); ?>
                                         <div class="tab-pane fade" id="three" role="tabpanel" aria-labelledby="one-tab"> 
                                             <div class="properties-description mb-50"> 
                                                 <h3 class="heading-2"><?php _e( 'Descrição', 'pam' ); ?></h3> 
-                                                <p><?php the_content( null, true ); ?></p> 
+                                                <p><?php the_content(); ?></p> 
                                             </div>                                             
                                         </div>                                         
                                         <div class="tab-pane fade " id="4" role="tabpanel" aria-labelledby="4-tab"> 
@@ -471,29 +460,6 @@ $cidade = get_field( 'cidade' ); ?>
                                                 <?php endforeach; ?> 
                                             </ul>                                             
                                         <?php endif; ?> 
-                                        </div>                                         
-                                        <!-- Properties amenities end -->                                         
-                                        <!-- Inside properties start -->                                         
-                                        <!-- Inside properties end -->                                         
-                                        <!-- Location start -->                                         
-                                        <!-- Location end -->                                         
-                                    </div>                                     
-                                </div>
-                                <div class="properties-amenities mb-40"> 
-                                    <h3 class="heading-2"><?php _e( 'Área Comum', 'pam' ); ?></h3> 
-                                    <div class="row"> 
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> 
-                                            <?php $terms = get_the_terms( get_the_ID(), 'pam_area_comum' ) ?>
-                                            <?php if( !empty( $terms ) ) : ?>
-                                                <?php $term_i = 0; ?>
-                                                <?php foreach( $terms as $term ) : ?>
-                                                    <?php if( $term_i >= 0 && $term_i <= 3 ) : ?>
-                                                        <ul class="amenities"> <i class="fa fa-check-square-o"></i><span><?php echo $term->name; ?></span> 
-                                                        </ul>
-                                                    <?php endif; ?>
-                                                    <?php $term_i++; ?>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?> 
                                         </div>                                         
                                         <!-- Properties amenities end -->                                         
                                         <!-- Inside properties start -->                                         

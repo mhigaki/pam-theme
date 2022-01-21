@@ -22,6 +22,7 @@ p {
     font-size: 14px;
     line-height: 26px;
     color: #535353;
+    text-align: justify;
 }
 
 strong {
@@ -2904,6 +2905,8 @@ input[type=checkbox]:checked + label:before {
 
 .services-3 p {
     margin-bottom: 25px;
+    text-align: justify;
+    direction: ltr;
 }
 
 .service-text {
@@ -4431,6 +4434,7 @@ footer {
 .service-info-5 p {
     margin-bottom: 0;
     font-size: 14px;
+    text-align: justify;
 }
 
 .section-2 {

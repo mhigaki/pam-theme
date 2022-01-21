@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: casa
+ Template Name: sala-comercial
  Template Post Type: properties
 */
 ?>
@@ -45,6 +45,6 @@
         </div>                     
     </div>                 
 </div>             
-<?php get_template_part( 'template-parts/content/content-area', 'properties-casa' ); ?>             
+<?php get_template_part( 'template-parts/content/content-area', 'properties-sala-comercial' ); ?>             
 
 <?php get_footer(); ?>

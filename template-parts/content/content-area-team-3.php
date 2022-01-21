@@ -26,7 +26,25 @@
                   <?php echo PG_Image::getPostImage( null, 'agents', array(
                       'class' => 'img-fluid',
                       'sizes' => '(max-width: 320px) 84vw, (max-width: 640px) 508px, (max-width: 768px) 90vw, (max-width: 1024px) 70vw, (max-width: 1280px) 369px, 369px'
-                  ), null, null ) ?>                    
+                  ), null, null ) ?> 
+                  <ul class="social-list clearfix"> 
+                    <?php if ( get_field( 'field_5fa80ffdccc06' ) ) : ?>
+                      <li><a href="<?php echo esc_url( get_field( 'field_5fa80ffdccc06' ) ); ?>" class="facebook"><i class="fa fa-facebook"></i></a>
+                      </li>
+                    <?php endif; ?> 
+                    <?php if ( get_field( 'field_5fa81010ccc07' ) ) : ?>
+                      <li><a href="<?php echo esc_url( get_field( 'field_5fa81010ccc07' ) ); ?>" class="twitter"><i class="fa fa-twitter"></i></a>
+                      </li>
+                    <?php endif; ?> 
+                    <?php if ( get_field( 'field_5fa8102bccc09' ) ) : ?>
+                      <li> <a href="<?php echo esc_url( get_field( 'field_5fa8102bccc09' ) ); ?>" class="instagram"><i class="fa fa-instagram"></i></a> 
+                      </li>
+                    <?php endif; ?> 
+                    <?php if ( get_field( 'field_5fa8101dccc08' ) ) : ?>
+                      <li><a href="<?php echo esc_url( get_field( 'field_5fa8101dccc08' ) ); ?>" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                      </li>
+                    <?php endif; ?> 
+                  </ul>                   
                 </div>                 
               </div>               
               <div class="col-xl-8 col-lg-7 col-md-12 col-pad align-self-center"> 
