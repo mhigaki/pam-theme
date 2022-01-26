@@ -17,7 +17,7 @@
         <div class="row">
             <?php get_template_part( 'template-parts/content/content-area-properties-galpao' ); ?>
             <div class="col-lg-4 col-md-12">
-                <?php get_template_part( 'sidebar', 'properties' ); ?>
+                <?php get_template_part( 'sidebar', 'right' ); ?>
             </div>
         </div>
         <!-- Similar Properties start -->

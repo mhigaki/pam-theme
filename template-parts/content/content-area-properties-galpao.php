@@ -1,4 +1,4 @@
-<div class="col-lg-8 col-md-12">
+
   <!-- Heading properties start -->
   <div class="heading-properties-2 hp-3">
     <div class="row">
@@ -245,7 +245,7 @@
   <!-- Properties description start -->
   <div class="properties-description mb-40">
     <h3 class="heading-2"><?php _e( '‎Descrição‎', 'pam' ); ?></h3>
-    <p><?php the_content( null, true ); ?></p>
+    <p><?php the_content(); ?></p>
   </div>
   <!-- Properties description end -->
   <!-- Properties condition start -->
@@ -258,14 +258,14 @@
     <table> 
       <tbody class="text-center"> 
         <tr> 
-          <td><strong><?php _e( 'Metragem', 'pam' ); ?></strong></td>            
+          <td><strong><?php _e( 'Metragem', 'pam' ); ?></strong></td> 
           <td><strong><?php _e( 'Banheiros', 'pam' ); ?></strong></td> 
-          <td><strong><?php _e( 'Vagas', 'pam' ); ?></strong></td>            
+          <td><strong><?php _e( 'Vagas', 'pam' ); ?></strong></td> 
         </tr>         
         <tr class="text-center"> 
-          <td><?php echo get_field( 'informacoes_planta_area' ); ?></td>            
+          <td><?php echo get_field( 'informacoes_planta_area' ); ?></td> 
           <td><?php echo get_field( 'informacoes_planta_banheiros' ); ?></td> 
-          <td><?php echo get_field( 'informacoes_planta_garagem' ); ?></td>            
+          <td><?php echo get_field( 'informacoes_planta_garagem' ); ?></td> 
         </tr>         
       </tbody>       
     </table>     
@@ -294,4 +294,3 @@
     </div>
   <?php endif; ?>
   <!-- Location end -->
-</div>

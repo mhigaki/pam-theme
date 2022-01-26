@@ -33,9 +33,9 @@
                         <p class="price"><?php echo get_field( 'field_5faf728e8aa5e' ); ?></p>
                       <?php endif; ?> 
                       <?php echo get_field( 'field_606939e7915cd' ); ?> 
-                    </div><?php echo PG_Image::getPostImage( null, 'img_post', array(
+                    </div><?php echo PG_Image::getPostImage( null, 'post-thumbnail', array(
                         'class' => 'd-block img-fluid w-100',
-                        'sizes' => '(max-width: 320px) 84vw, (max-width: 640px) 510px, (max-width: 768px) 70vw, (max-width: 1024px) 44vw, (max-width: 1280px) 350px, 350px'
+                        'sizes' => '(max-width: 320px) 100vw, (max-width: 640px) 510px, (max-width: 768px) 70vw, (max-width: 1024px) 44vw, (max-width: 1280px) 350px, 350px'
                     ), null, null ) ?> </a> 
                 </div>                 
                 <div class="detail"> 

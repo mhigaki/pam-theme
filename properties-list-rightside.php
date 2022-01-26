@@ -1,3 +1,9 @@
+<?php
+/*
+ Template Name: Properties List Rightside
+ Template Post Type: page
+*/
+?>
 <?php get_header(); ?>
 
 <?php get_template_part( 'template-parts/content/banner-sub' ); ?>
@@ -7,7 +13,7 @@
             <?php
                 $properties_query_args = array(
                   'post_type' => 'properties',
-                  'posts_per_page' => 6,
+                  'posts_per_page' => 3,
                   'paged' => get_query_var( 'paged' ) ?: 1,
                   'order' => 'ASC',
                   'orderby' => 'date'
@@ -57,24 +63,18 @@
                     <div <?php post_class( 'property-box-2 wow fadeInUp delay-03s' ); ?> id="post-<?php the_ID(); ?>">
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-pad">
-                                <a href="properties-details.html" class="property-img"> <?php echo PG_Image::getPostImage( null, 'large', array(
+                                <a href="<?php echo esc_url( get_permalink() ); ?>" class="property-img"> <?php echo PG_Image::getPostImage( null, 'large', array(
                                           'class' => 'img-fluid'
                                     ), 'both', null ) ?> <div class="listing-badges">
                                         <span class="featured"><?php _e( 'Featured', 'pam' ); ?></span>
                                     </div> <div class="price-ratings-box">
-                                        <p class="price"> <?php _e( '$178,000', 'pam' ); ?> </p>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
+                                        <p class="price"><?php echo get_post_meta( get_the_ID(), 'valor', true ); ?></p>
+                                        <?php echo get_field( 'rattings' ); ?>
                                     </div> </a>
                             </div>
                             <div class="col-lg-7 col-md-7">
                                 <div class="detail ">
-                                    <h3 class="title"> <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a> </h3>
+                                    <h3 class="title"> <a href="properties-details.html"><?php the_title(); ?></a> </h3>
                                     <h5 class="location"> <a href="properties-details.html"> <i class="flaticon-location"></i><?php _e( '20-21 Kathal St. Tampa City, FL', 'pam' ); ?> </a> </h5>
                                     <ul class="facilities-list clearfix">
                                         <li>
@@ -103,7 +103,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a href="properties-details.html" class="btn button-theme"><?php _e( 'Details', 'pam' ); ?></a>
+                                <a href="properties-details.html" class="btn button-theme"><?php _e( 'Detalhes', 'pam' ); ?></a>
                                 <div class="footer">
                                     <div class="pull-left days">
                                         <p><i class="flaticon-time"></i> <?php _e( '5 Days ago', 'pam' ); ?></p>
@@ -122,24 +122,7 @@
                 <?php wp_reset_postdata(); ?>
                 <!-- properties 2 end -->
                 <!-- Page navigation start -->
-                <div class="pagination-box hidden-mb-45 text-center">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
-                            </li>
-                            <li class="page-item"><a class="page-link active" href="#"><?php _e( '1', 'pam' ); ?></a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#"><?php _e( '2', 'pam' ); ?></a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#"><?php _e( '3', 'pam' ); ?></a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                <?php get_template_part( 'template-parts/navigation/pagination-box' ); ?>
                 <!-- Page navigation end-->
             </div>
             <div class="col-lg-4 col-md-12">
@@ -147,6 +130,7 @@
             </div>
         </div>
     </div>
-</div>            
+</div>
+<?php //code ?>
 
 <?php get_footer(); ?>
