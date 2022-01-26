@@ -12,9 +12,9 @@
           <?php endif; ?>
           <p> <i class="fa fa-map-marker"></i> <?php echo "$endereco - $cidade" ?> </p>
         </div>
-        <div class="pull-right">
+        <div class="pull-right"> 
           <h3><span class="text-right"><?php echo get_field( 'valor' ); ?></span></h3>
-          <p><?php echo get_field( 'rattings' ); ?></p>
+          <p><?php echo get_field( 'rattings' ); ?></p> 
         </div>
       </div>
     </div>
@@ -200,46 +200,46 @@
       </div>
     </form>
   </div>
-  <div class="property-details mb-40">
-    <h3 class="heading-2"><?php _e( 'Detalhes do Imóvel', 'pam' ); ?></h3>
-    <div class="row">
-      <div class="col-md-4 col-sm-6">
-        <ul>
-          <li> <strong><?php _e( 'ID:', 'pam' ); ?></strong>
-            <?php the_ID(); ?>
+  <div class="property-details mb-40"> 
+    <h3 class="heading-2"><?php _e( 'Detalhes do Imóvel', 'pam' ); ?></h3> 
+    <div class="row"> 
+      <div class="col-md-4 col-sm-6"> 
+        <ul> 
+          <li> <strong><?php _e( 'ID:', 'pam' ); ?></strong> 
+            <?php the_ID(); ?> 
           </li>
           <li> <strong><?php _e( 'Tipo :', 'pam' ); ?></strong>
-            <?php the_terms( null, 'properties_status' ); ?>
+            <?php the_terms( null, 'properties_status' ); ?> 
           </li>
           <li> <strong><?php _e( 'Cidade:', 'pam' ); ?></strong>
-            <?php echo get_field( 'cidade' ); ?>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <ul>
+            <?php echo get_field( 'cidade' ); ?> 
+          </li>           
+        </ul>         
+      </div>       
+      <div class="col-md-4 col-sm-6"> 
+        <ul> 
           <?php if ( get_field( 'informacoes_planta_area' ) ) : ?>
             <li> <strong><?php _e( 'Área(m²):', 'pam' ); ?></strong>
-              <?php echo get_field( 'informacoes_planta_area' ); ?>
+              <?php echo get_field( 'informacoes_planta_area' ); ?> 
             </li>
           <?php endif; ?>
           <?php if ( get_field( 'valor_do_condominio' ) ) : ?>
             <li> <strong><?php _e( 'Condomínio:&nbsp;', 'pam' ); ?></strong>
-              <?php echo get_field( 'valor_do_condominio' ); ?>
+              <?php echo get_field( 'valor_do_condominio' ); ?> 
             </li>
           <?php endif; ?>
           <?php if ( get_field( 'valor_do_iptu' ) ) : ?>
             <li> <strong><?php _e( 'IPTU:', 'pam' ); ?></strong>
-              <?php echo get_field( 'valor_do_iptu' ); ?>
+              <?php echo get_field( 'valor_do_iptu' ); ?> 
             </li>
-          <?php endif; ?>
-        </ul>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <ul>
+          <?php endif; ?> 
+        </ul>         
+      </div>       
+      <div class="col-md-4 col-sm-6"> 
+        <ul> 
           <?php if ( get_field( 'field_5fac3f8b9f6a3' ) ) : ?>
             <li> <strong><?php _e( 'Banheiro', 'pam' ); ?></strong>
-              <?php echo get_field( 'field_5fac3f8b9f6a3' ); ?>
+              <?php echo get_field( 'field_5fac3f8b9f6a3' ); ?> 
             </li>
           <?php endif; ?>
           <li> <strong><?php _e( 'Vagas:', 'pam' ); ?></strong>
@@ -247,12 +247,12 @@
           </li>
           <?php if ( get_field( 'field_61ea275e7c1c3' ) ) : ?>
             <li> <strong><?php _e( 'Piscina:', 'pam' ); ?></strong>
-              <?php echo get_field( 'field_61ea275e7c1c3' ); ?>
+              <?php echo get_field( 'field_61ea275e7c1c3' ); ?> 
             </li>
-          <?php endif; ?>
-        </ul>
-      </div>
-    </div>
+          <?php endif; ?> 
+        </ul>         
+      </div>       
+    </div>     
   </div>
   <!-- Advanced search end -->
   <!-- Properties description start -->
@@ -266,48 +266,48 @@
   <!-- Properties amenities start -->
   <!-- Properties amenities end -->
   <!-- Floor plans start -->
-  <div class="floor-plans mb-50">
-    <h3 class="heading-2"><?php _e( 'Planta Baixa', 'pam' ); ?></h3>
-    <table>
-      <tbody class="text-center">
-        <tr>
-          <td><strong><?php _e( 'Metragem', 'pam' ); ?></strong></td>
-          <td><strong><?php _e( 'Quartos', 'pam' ); ?></strong></td>
-          <td><strong><?php _e( 'Banheiros', 'pam' ); ?></strong></td>
-          <td><strong><?php _e( 'Vagas', 'pam' ); ?></strong></td>
-          <td><strong><?php _e( 'Suítes', 'pam' ); ?></strong></td>
-        </tr>
-        <tr class="text-center">
-          <td><?php echo get_field( 'informacoes_planta_area' ); ?></td>
-          <td><?php echo get_field( 'informacoes_planta_quartos' ); ?></td>
-          <td><?php echo get_field( 'informacoes_planta_banheiros' ); ?></td>
-          <td><?php echo get_field( 'informacoes_planta_garagem' ); ?></td>
-          <td><?php echo get_field( 'informacoes_planta_suites' ); ?></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="text-center">
+  <div class="floor-plans mb-50"> 
+    <h3 class="heading-2"><?php _e( 'Planta Baixa', 'pam' ); ?></h3> 
+    <table> 
+      <tbody class="text-center"> 
+        <tr> 
+          <td><strong><?php _e( 'Metragem', 'pam' ); ?></strong></td> 
+          <td><strong><?php _e( 'Quartos', 'pam' ); ?></strong></td> 
+          <td><strong><?php _e( 'Banheiros', 'pam' ); ?></strong></td> 
+          <td><strong><?php _e( 'Vagas', 'pam' ); ?></strong></td> 
+          <td><strong><?php _e( 'Suítes', 'pam' ); ?></strong></td> 
+        </tr>         
+        <tr class="text-center"> 
+          <td><?php echo get_field( 'informacoes_planta_area' ); ?></td> 
+          <td><?php echo get_field( 'informacoes_planta_quartos' ); ?></td> 
+          <td><?php echo get_field( 'informacoes_planta_banheiros' ); ?></td> 
+          <td><?php echo get_field( 'informacoes_planta_garagem' ); ?></td> 
+          <td><?php echo get_field( 'informacoes_planta_suites' ); ?></td> 
+        </tr>         
+      </tbody>       
+    </table>     
+    <div class="text-center"> 
       <?php if ( get_field( 'imagem_da_planta' ) ) : ?>
         <img src="<?php echo PG_Image::getUrl( get_field( 'imagem_da_planta' ), 'large' ) ?>" alt="floor-plans" width="600" height="300"/>
-      <?php endif; ?>
-    </div>
+      <?php endif; ?> 
+    </div>     
   </div>
   <!-- Floor plans end -->
   <!-- Inside properties start -->
   <?php if ( get_field( 'video_do_imovel' ) ) : ?>
-    <div class="inside-properties mb-50">
-      <h3 class="heading-2"><?php _e( 'Vídeo do Imóvel', 'pam' ); ?></h3>
-      <?php echo get_field( 'video_do_imovel' ); ?>
+    <div class="inside-properties mb-50"> 
+      <h3 class="heading-2"><?php _e( 'Vídeo do Imóvel', 'pam' ); ?></h3> 
+      <?php echo get_field( 'video_do_imovel' ); ?> 
     </div>
   <?php endif; ?>
   <!-- Inside properties end -->
   <!-- Location start -->
   <?php if ( get_field( 'mapa_do_imovel' ) ) : ?>
-    <div class="location mb-50">
-      <div class="map">
-        <h3 class="heading-2"><?php _e( 'Localização do Imóvel', 'pam' ); ?></h3>
-        <?php echo get_field( 'mapa_do_imovel' ); ?>
-      </div>
+    <div class="location mb-50"> 
+      <div class="map"> 
+        <h3 class="heading-2"><?php _e( 'Localização do Imóvel', 'pam' ); ?></h3> 
+        <?php echo get_field( 'mapa_do_imovel' ); ?> 
+      </div>       
     </div>
   <?php endif; ?>
   <!-- Location end -->

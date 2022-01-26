@@ -20,7 +20,9 @@
                         <ul> 
                             <li> <a href="index-2.html"><?php _e( 'Index', 'pam' ); ?></a> 
                             </li>                                         
-                            <li><span>/</span><span><?php the_terms( '0', 'properties_types' ); ?></span>
+                            <li>
+                                <span>/</span>
+                                <span><?php the_terms( '0', 'properties_types' ); ?></span>
                             </li>                                         
                         </ul>                                     
                     </div>
@@ -30,7 +32,8 @@
                 <div class="col-md-6"> 
                     <div class="contact-info"> 
                         <ul> 
-                            <li><i class="fa fa-phone"></i> <span></span>
+                            <li>
+                                <i class="fa fa-phone"></i> <span></span>
                                 <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?>
                             </li>                                         
                             <li> <a href="contact.html" class="btn btn-md button-theme"><?php _e( 'Contact us', 'pam' ); ?></a> 
@@ -42,7 +45,7 @@
         </div>                     
     </div>                 
 </div>             
-<div class="properties-details-page content-area-7">                  
+<div class="properties-details-page content-area-7"> 
     <div class="container"> 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
