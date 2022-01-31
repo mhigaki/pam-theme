@@ -7,8 +7,8 @@ $(function() {
     setTimeout(function() {
       $(".page_loader").fadeOut("fast");
     }, 100)
-    //$('link[id="style_sheet"]').attr('href', 'css/skins/green-light.css');
-    //$('.logo img').attr('src', 'img/logos/green-light-logo.png');
+    //$('link[id="style_sheet"]').attr('href', 'css/skins/red.css');
+    //$('.logo img').attr('src', 'img/logos/logo-site.svg');
 
 
     if ($('body .filter-portfolio').length > 0) {

@@ -234,7 +234,7 @@
   </div>   
   <!-- Posts by category start -->   
   <div class="posts-by-category widget"> 
-    <h3 class="sidebar-title"><?php _e( 'Category', 'pam' ); ?></h3> 
+    <h3 class="sidebar-title"><?php _e( 'Categorias', 'pam' ); ?></h3> 
     <?php $terms = get_terms( array(
         'taxonomy' => 'properties_types',
         'orderby' => 'name',

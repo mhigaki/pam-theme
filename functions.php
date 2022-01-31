@@ -18,7 +18,7 @@ function pam_setup() {
      * Let WordPress manage the document title.
      */
     add_theme_support( 'title-tag' );
-    
+
     /*
      * Enable support for Post Thumbnails on posts and pages.
      */
@@ -40,7 +40,7 @@ function pam_setup() {
     register_nav_menu(  'footer', __( 'Footer', 'pam' )  );
 
     /* Pinegrow generated Register Menus End */
-    
+
 /*
     * Set image sizes
      */
@@ -49,10 +49,10 @@ function pam_setup() {
     add_image_size( 'agents', 600, 600, false );
     add_image_size( 'agent', 500, 600, false );
     add_image_size( 'banner', 1920, 253, false );
-    add_image_size( 'imovel', 315, 255, false );
+    add_image_size( 'imovel', 315, 255, true );
     add_image_size( 'blog_fig', 1200, 630, false );
     /* Pinegrow generated Image Sizes End */
-    
+
     /*
      * Switch default core markup for search form, comment form, and comments
      * to output valid HTML5.
@@ -82,7 +82,7 @@ if ( ! function_exists( 'pam_init' ) ) :
 
 function pam_init() {
 
-    
+
     // Use categories and tags with attachments
     register_taxonomy_for_object_type( 'category', 'attachment' );
     register_taxonomy_for_object_type( 'post_tag', 'attachment' );
@@ -93,7 +93,7 @@ function pam_init() {
     /* Pinegrow generated Custom Post Types Begin */
 
     register_post_type('properties', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Propriedades', 'pam' ),
         'singular_name' => __( 'Propriedade', 'pam' )
@@ -108,7 +108,7 @@ function pam_init() {
   ));
 
     register_post_type('corretor', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Corretores', 'pam' ),
         'singular_name' => __( 'Corretor', 'pam' )
@@ -124,7 +124,7 @@ function pam_init() {
   ));
 
     register_post_type('sliders', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Sliders', 'pam' ),
         'singular_name' => __( 'Slider', 'pam' )
@@ -137,7 +137,7 @@ function pam_init() {
   ));
 
     register_post_type('servicos', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Serviços', 'pam' ),
         'singular_name' => __( 'Servico', 'pam' )
@@ -152,7 +152,7 @@ function pam_init() {
   ));
 
     register_post_type('testemonials', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Testemunhas', 'pam' ),
         'singular_name' => __( 'A testemunha', 'pam' )
@@ -166,7 +166,7 @@ function pam_init() {
   ));
 
     register_post_type('partners', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Parceiros', 'pam' ),
         'singular_name' => __( 'O parceiro', 'pam' )
@@ -181,14 +181,14 @@ function pam_init() {
   ));
 
     /* Pinegrow generated Custom Post Types End */
-    
+
     /*
      * Register custom taxonomies. You can also move this code to a plugin.
      */
     /* Pinegrow generated Taxonomies Begin */
 
     register_taxonomy('properties_types', 'properties', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Imóveis-tipos', 'pam' ),
         'singular_name' => __( 'Imóvel-tipo', 'pam' )
@@ -197,7 +197,7 @@ function pam_init() {
   ));
 
     register_taxonomy('properties_status', 'properties', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Imóveis-Status', 'pam' ),
         'singular_name' => __( 'Imóvel-status', 'pam' )
@@ -206,7 +206,7 @@ function pam_init() {
   ));
 
     register_taxonomy('properties_city', 'properties', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Imóveis-Cidade', 'pam' ),
         'singular_name' => __( 'Imóvel-cidade', 'pam' )
@@ -216,7 +216,7 @@ function pam_init() {
   ));
 
     register_taxonomy('properties_uf', 'properties', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Imóveis-UF', 'pam' ),
         'singular_name' => __( 'Imóvel-uf', 'pam' )
@@ -225,7 +225,7 @@ function pam_init() {
   ));
 
     register_taxonomy('pam_area_comum', 'properties', array(
-    'labels' => 
+    'labels' =>
       array(
         'name' => __( 'Area Comum', 'pam' ),
         'singular_name' => __( 'area-comum', 'pam' )
@@ -425,7 +425,7 @@ function pam_customize_register( $wp_customize ) {
     'type' => 'text',
     'section' => 'pam_sc_header',
     'priority' => '30',
-    'input_attrs' => 
+    'input_attrs' =>
       array(
         'placeholder' => 'contato@pamconsultoria.com.br'
       )
@@ -819,6 +819,10 @@ if ( ! function_exists( 'pam_enqueue_scripts' ) ) :
         /* Pinegrow generated Enqueue Scripts Begin */
 
     wp_enqueue_script( 'pam-ieemulationmodeswarning', get_template_directory_uri() . '/js/ie-emulation-modes-warning.js', null, '1.10', false );
+    if( is_page( 'contato' ) ) {
+        wp_enqueue_script( 'pam-mapboxgl', 'https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js', null, null, false );
+
+    }
 
     wp_enqueue_script( 'pam-popper', get_template_directory_uri() . '/js/popper.min.js', null, '1.10', true );
 
@@ -855,8 +859,6 @@ if ( ! function_exists( 'pam_enqueue_scripts' ) ) :
     wp_enqueue_script( 'pam-jquerymagnificpopup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', null, '1.10', true );
 
     wp_enqueue_script( 'pam-jquerycountdown', get_template_directory_uri() . '/js/jquery.countdown.js', null, '1.10', true );
-
-    wp_enqueue_script( 'pam-maps', get_template_directory_uri() . '/js/maps.js', null, '1.10', true );
 
     wp_enqueue_script( 'pam-app', get_template_directory_uri() . '/js/app.js', null, '1.10', true );
 
@@ -903,6 +905,10 @@ if ( ! function_exists( 'pam_enqueue_scripts' ) ) :
     wp_enqueue_style( 'pam-style-3', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700', null, '1.10', 'all' );
 
     wp_enqueue_style( 'pam-ieviewportbugworkaround', get_template_directory_uri() . '/css/ie10-viewport-bug-workaround.css', null, '1.10', 'all' );
+    if( is_page( 'contato' ) ) {
+        wp_enqueue_style( 'pam-mapboxgl', 'https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css', null, null, 'all' );
+
+    }
 
     wp_deregister_style( 'pam-style-4' );
     wp_enqueue_style( 'pam-style-4', get_bloginfo('stylesheet_url'), false, null, 'all');
@@ -935,46 +941,16 @@ function pam_selectively_enqueue_admin_script( $page ) {
     /* Pinegrow generated Enqueue Admin Styles Begin */
 
     /* Pinegrow generated Enqueue Admin Styles End */
-    
+
     /* Pinegrow generated Enqueue Admin Scripts Begin */
 
     wp_enqueue_script( 'pam-iconify', 'https://code.iconify.design/2/2.1.0/iconify.min.js', null, '2.10', true );
 
     /* Pinegrow generated Enqueue Admin Scripts End */
-        
+
 }
 add_action( 'admin_enqueue_scripts', 'pam_selectively_enqueue_admin_script' );
 
 /* End Enqueue Admin Styles and Scripts */
-
-
-/* Setting up theme supports options */
-
-function pam_setup_theme_supports() {
-    // Don't edit anything between the following comments.
-    /* Pinegrow generated Theme Supports Begin */
-    
-    //Tell WP to scope loaded editor styles to the block editor                    
-    add_theme_support( 'editor-styles' );
-    /* Pinegrow generated Theme Supports End */
-}
-add_action('after_setup_theme', 'pam_setup_theme_supports');
-
-/* End of setting up theme supports options */
-
-
-/* Loading editor styles for blocks */
-
-function pam_add_blocks_editor_styles() {
-    // Add blocks editor styles. Don't edit anything between the following comments.
-    /* Pinegrow generated Load Blocks Editor Styles Begin */
-    add_editor_style( 'css/bootstrap.min.css' );
-    add_editor_style( 'css/skins/red.css' );
-
-    /* Pinegrow generated Load Blocks Editor Styles End */
-}
-add_action('admin_init', 'pam_add_blocks_editor_styles');
-
-/* End of loading editor styles for blocks */
 
 ?>

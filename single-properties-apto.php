@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 
-            <div class="sub-banner" src="<?php echo esc_url( get_header_image() ); ?>"> 
+            <div class="sub-banner"> 
                 <div class="container"> 
                     <div class="page-name"> 
                         <h1><?php the_title(); ?></h1> 
@@ -18,7 +18,7 @@
                             <div class="col-md-6"> 
                                 <div class="breadcrumb-area"> 
                                     <ul> 
-                                        <li> <a href="index-2.html"><?php _e( 'Index', 'pam' ); ?></a> 
+                                        <li> <a href="<?php echo esc_url( home_url() ); ?>"><?php _e( 'Index', 'pam' ); ?></a> 
                                         </li>                                         
                                         <li>
                                             <span>/</span>
@@ -263,10 +263,14 @@ $cidade = get_field( 'cidade' ); ?>
                                         </li>                                         
                                         <li class="nav-item"> <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="one" aria-selected="false"><?php _e( 'Descrição', 'pam' ); ?></a> 
                                         </li>                                         
-                                        <li class="nav-item"> <a class="nav-link" id="4-tab" data-toggle="tab" href="#4" role="tab" aria-controls="4" aria-selected="true"><?php _e( 'Video', 'pam' ); ?></a> 
-                                        </li>                                         
-                                        <li class="nav-item"> <a class="nav-link" id="5-tab" data-toggle="tab" href="#5" role="tab" aria-controls="5" aria-selected="true"><?php _e( 'Mapa', 'pam' ); ?></a> 
-                                        </li>                                         
+                                        <?php if ( get_field( 'video_do_imovel' ) ) : ?>
+                                            <li class="nav-item"> <a class="nav-link" id="4-tab" data-toggle="tab" href="#4" role="tab" aria-controls="4" aria-selected="true"><?php _e( 'Video', 'pam' ); ?></a> 
+                                            </li>
+                                        <?php endif; ?> 
+                                        <?php if ( get_field( 'mapa_do_imovel' ) ) : ?>
+                                            <li class="nav-item"> <a class="nav-link" id="5-tab" data-toggle="tab" href="#5" role="tab" aria-controls="5" aria-selected="true"><?php _e( 'Mapa', 'pam' ); ?></a> 
+                                            </li>
+                                        <?php endif; ?> 
                                     </ul>                                     
                                     <div class="tab-content" id="carTabContent"> 
                                         <div class="active fade show tab-pane" id="one" role="tabpanel" aria-labelledby="three-tab"> 
@@ -275,7 +279,7 @@ $cidade = get_field( 'cidade' ); ?>
                                                 <div class="row"> 
                                                     <div class="col-md-4 col-sm-6"> 
                                                         <ul> 
-                                                            <li> <strong><?php _e( 'ID:', 'pam' ); ?></strong> 
+                                                            <li> <strong><?php _e( 'ID:', 'pam' ); ?></strong><strong><?php _e( 'ID:', 'pam' ); ?></strong><strong><?php _e( 'ID:', 'pam' ); ?></strong> 
                                                                 <?php the_ID(); ?> 
                                                             </li>                                                             
                                                             <?php if ( get_field( 'valor_do_condominio' ) ) : ?>
