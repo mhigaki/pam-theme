@@ -190,7 +190,6 @@ function pam_register_required_plugins()
  	);
 
  	tgmpa( $plugins, $config );
-
 }
 
 //* Set the content width based on the theme's design and stylesheet.
@@ -221,5 +220,4 @@ if (! function_exists('pam_customize_panels')) {
 
     }
 }
-
 ?>

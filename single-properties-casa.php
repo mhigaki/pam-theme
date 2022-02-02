@@ -53,8 +53,8 @@
             </div>
         </div>
         <div class="row"> 
-            <div class="col-lg-8 col-md-12 col-xs-12"> 
-                <?php get_template_part( 'template-parts/content/content-area-properties-casa' ); ?> 
+            <div class="col-lg-8 col-md-12 col-xs-12">                              
+                <?php get_template_part( 'template-parts/content/content-area', 'properties-casa' ); ?>
             </div>                         
             <div class="col-lg-4 col-md-12"> 
                 <?php get_sidebar( 'right' ); ?> 

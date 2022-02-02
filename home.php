@@ -33,8 +33,8 @@
             <?php
                 $pam_blog_args = array(
                   'post_type' => 'post',
+                  'post_status' => 'publish',
                   'posts_per_page' => 2,
-                  'paged' => get_query_var( 'paged' ) ?: 1,
                   'order' => 'DESC',
                   'orderby' => 'date'
                 )
@@ -64,7 +64,7 @@
                         </div>
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?> 
-                    <?php get_template_part( 'template-parts/navigation/pagination', 'box' ); ?> 
+                    <?php get_template_part( 'template-parts/navigation/pagination-box' ); ?> 
                 </div>
             <?php endif; ?> 
             <div class="col-lg-4 col-md-12"> 

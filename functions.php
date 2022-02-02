@@ -93,7 +93,7 @@ function pam_init() {
     /* Pinegrow generated Custom Post Types Begin */
 
     register_post_type('properties', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Propriedades', 'pam' ),
         'singular_name' => __( 'Propriedade', 'pam' )
@@ -108,7 +108,7 @@ function pam_init() {
   ));
 
     register_post_type('corretor', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Corretores', 'pam' ),
         'singular_name' => __( 'Corretor', 'pam' )
@@ -124,7 +124,7 @@ function pam_init() {
   ));
 
     register_post_type('sliders', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Sliders', 'pam' ),
         'singular_name' => __( 'Slider', 'pam' )
@@ -137,7 +137,7 @@ function pam_init() {
   ));
 
     register_post_type('servicos', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Serviços', 'pam' ),
         'singular_name' => __( 'Servico', 'pam' )
@@ -152,7 +152,7 @@ function pam_init() {
   ));
 
     register_post_type('testemonials', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Testemunhas', 'pam' ),
         'singular_name' => __( 'A testemunha', 'pam' )
@@ -166,7 +166,7 @@ function pam_init() {
   ));
 
     register_post_type('partners', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Parceiros', 'pam' ),
         'singular_name' => __( 'O parceiro', 'pam' )
@@ -188,7 +188,7 @@ function pam_init() {
     /* Pinegrow generated Taxonomies Begin */
 
     register_taxonomy('properties_types', 'properties', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Imóveis-tipos', 'pam' ),
         'singular_name' => __( 'Imóvel-tipo', 'pam' )
@@ -197,7 +197,7 @@ function pam_init() {
   ));
 
     register_taxonomy('properties_status', 'properties', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Imóveis-Status', 'pam' ),
         'singular_name' => __( 'Imóvel-status', 'pam' )
@@ -206,7 +206,7 @@ function pam_init() {
   ));
 
     register_taxonomy('properties_city', 'properties', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Imóveis-Cidade', 'pam' ),
         'singular_name' => __( 'Imóvel-cidade', 'pam' )
@@ -216,7 +216,7 @@ function pam_init() {
   ));
 
     register_taxonomy('properties_uf', 'properties', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Imóveis-UF', 'pam' ),
         'singular_name' => __( 'Imóvel-uf', 'pam' )
@@ -225,7 +225,7 @@ function pam_init() {
   ));
 
     register_taxonomy('pam_area_comum', 'properties', array(
-    'labels' =>
+    'labels' => 
       array(
         'name' => __( 'Area Comum', 'pam' ),
         'singular_name' => __( 'area-comum', 'pam' )
@@ -425,7 +425,7 @@ function pam_customize_register( $wp_customize ) {
     'type' => 'text',
     'section' => 'pam_sc_header',
     'priority' => '30',
-    'input_attrs' =>
+    'input_attrs' => 
       array(
         'placeholder' => 'contato@pamconsultoria.com.br'
       )
@@ -821,7 +821,7 @@ if ( ! function_exists( 'pam_enqueue_scripts' ) ) :
     wp_enqueue_script( 'pam-ieemulationmodeswarning', get_template_directory_uri() . '/js/ie-emulation-modes-warning.js', null, '1.10', false );
     if( is_page( 'contato' ) ) {
         wp_enqueue_script( 'pam-mapboxgl', 'https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js', null, null, false );
-
+        
     }
 
     wp_enqueue_script( 'pam-popper', get_template_directory_uri() . '/js/popper.min.js', null, '1.10', true );
@@ -907,7 +907,7 @@ if ( ! function_exists( 'pam_enqueue_scripts' ) ) :
     wp_enqueue_style( 'pam-ieviewportbugworkaround', get_template_directory_uri() . '/css/ie10-viewport-bug-workaround.css', null, '1.10', 'all' );
     if( is_page( 'contato' ) ) {
         wp_enqueue_style( 'pam-mapboxgl', 'https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css', null, null, 'all' );
-
+        
     }
 
     wp_deregister_style( 'pam-style-4' );

@@ -61,7 +61,8 @@
           'title_li' => '',
           'show_option_none' => 'Sem Categorias',
           'number' => '5',
-          'taxonomy' => 'category'
+          'taxonomy' => 'properties_types',
+          'walker' => '121212'
       ) ); ?>                                    
     </ul>     
   </div>   

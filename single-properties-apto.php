@@ -20,9 +20,7 @@
                                     <ul> 
                                         <li> <a href="<?php echo esc_url( home_url() ); ?>"><?php _e( 'Index', 'pam' ); ?></a> 
                                         </li>                                         
-                                        <li>
-                                            <span>/</span>
-                                            <span><?php the_terms( '0', 'properties_types' ); ?></span>
+                                        <li><span>/</span><span><?php the_terms( '0', 'properties_types' ); ?></span>
                                         </li>                                         
                                     </ul>                                     
                                 </div>
@@ -32,8 +30,7 @@
                             <div class="col-md-6"> 
                                 <div class="contact-info"> 
                                     <ul> 
-                                        <li>
-                                            <i class="fa fa-phone"></i> <span></span>
+                                        <li><i class="fa fa-phone"></i> <span></span>
                                             <?php echo get_theme_mod( 'pam_sc_header_telefone' ); ?>
                                         </li>                                         
                                         <li> <a class="btn btn-md button-theme" href="contact.html"><?php _e( 'Contate-nos', 'pam' ); ?></a> 
@@ -279,7 +276,9 @@ $cidade = get_field( 'cidade' ); ?>
                                                 <div class="row"> 
                                                     <div class="col-md-4 col-sm-6"> 
                                                         <ul> 
-                                                            <li> <strong><?php _e( 'ID:', 'pam' ); ?></strong><strong><?php _e( 'ID:', 'pam' ); ?></strong><strong><?php _e( 'ID:', 'pam' ); ?></strong> 
+                                                            <li> <strong><?php _e( 'ID:', 'pam' ); ?></strong>
+                                                                <strong><?php _e( 'ID:', 'pam' ); ?></strong>
+                                                                <strong><?php _e( 'ID:', 'pam' ); ?></strong> 
                                                                 <?php the_ID(); ?> 
                                                             </li>                                                             
                                                             <?php if ( get_field( 'valor_do_condominio' ) ) : ?>

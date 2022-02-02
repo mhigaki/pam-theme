@@ -34,10 +34,10 @@
                 <div class="col-md-8">
                     <div class="contact-info">
                         <ul>
-                            <li><i class="fa fa-phone"></i> 
-                            </li>
                             <li>
-                                <a href="contact.html" class="btn btn-md button-theme"><?php _e( 'Contact us', 'pam' ); ?></a>
+                                <i class="fa fa-phone"></i> 
+                            </li>
+                            <li><a href="contact.html" class="btn btn-md button-theme"><?php _e( 'Contact us', 'pam' ); ?></a>
                             </li>
                         </ul>
                     </div>

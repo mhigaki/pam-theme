@@ -29,11 +29,13 @@
                   ), null, null ) ?> 
                   <ul class="social-list clearfix"> 
                     <?php if ( get_field( 'field_5fa80ffdccc06' ) ) : ?>
-                      <li><a href="<?php echo esc_url( get_field( 'field_5fa80ffdccc06' ) ); ?>" class="facebook"><i class="fa fa-facebook"></i></a>
+                      <li>
+                        <a href="<?php echo esc_url( get_field( 'field_5fa80ffdccc06' ) ); ?>" class="facebook"><i class="fa fa-facebook"></i></a>
                       </li>
                     <?php endif; ?> 
                     <?php if ( get_field( 'field_5fa81010ccc07' ) ) : ?>
-                      <li><a href="<?php echo esc_url( get_field( 'field_5fa81010ccc07' ) ); ?>" class="twitter"><i class="fa fa-twitter"></i></a>
+                      <li>
+                        <a href="<?php echo esc_url( get_field( 'field_5fa81010ccc07' ) ); ?>" class="twitter"><i class="fa fa-twitter"></i></a>
                       </li>
                     <?php endif; ?> 
                     <?php if ( get_field( 'field_5fa8102bccc09' ) ) : ?>
@@ -41,7 +43,8 @@
                       </li>
                     <?php endif; ?> 
                     <?php if ( get_field( 'field_5fa8101dccc08' ) ) : ?>
-                      <li><a href="<?php echo esc_url( get_field( 'field_5fa8101dccc08' ) ); ?>" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                      <li>
+                        <a href="<?php echo esc_url( get_field( 'field_5fa8101dccc08' ) ); ?>" class="linkedin"><i class="fa fa-linkedin"></i></a>
                       </li>
                     <?php endif; ?> 
                   </ul>                   

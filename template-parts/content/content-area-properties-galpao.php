@@ -10,7 +10,7 @@
               <h3><?php echo $term->name; ?></h3>
             <?php endforeach; ?>
           <?php endif; ?>
-          <p> <i class="fa fa-map-marker"></i> <?php echo "$endereco - $cidade" ?> </p>
+          <p> <i class="fa fa-map-marker"></i><?php echo get_field( 'field_5fa8c1877a712' ); ?>  </p>
         </div>
         <div class="pull-right"> 
           <h3><span class="text-right"><?php echo get_field( 'valor' ); ?></span></h3>
